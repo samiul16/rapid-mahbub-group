@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
+import ExpandableSearchBar from "./Common/ExpandableSearchBar";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -13,6 +14,24 @@ const Navbar = () => {
   const langRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
   const isHomePage = pathname === "/";
+
+  // Sample search suggestions - you can replace with your actual data
+  const searchSuggestions = [
+    "About Us",
+    "Contact",
+    "Divisions",
+    "Career Opportunities",
+    "Media Gallery",
+    "Book Meeting",
+    "Services",
+    "Projects",
+  ];
+
+  const handleSearch = (query: string) => {
+    // Handle search functionality here
+    console.log("Searching for:", query);
+    // You can implement navigation or search logic here
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -254,13 +273,14 @@ const Navbar = () => {
               )}
             </div> */}
 
-            {/* Search Icon */}
-            {/* <button
-              className={`w-10 h-10 ${styles.textColor} group-hover:text-sky-500 hover:bg-white/10 rounded-full flex items-center justify-center transition-colors cursor-pointer`}
-              aria-label="Search"
-            >
-              <Search className="w-5 h-5" />
-            </button> */}
+            {/* Search Bar */}
+            <ExpandableSearchBar
+              onSearch={handleSearch}
+              placeholder="Search..."
+              suggestions={searchSuggestions}
+              iconColor={styles.textColor}
+              hoverIconColor="group-hover:text-sky-500"
+            />
 
             {/* CTA Button */}
             <Link
@@ -428,15 +448,17 @@ const Navbar = () => {
           </div> */}
 
           <div className="space-y-4">
-            {/* <button
-              className="w-full flex items-center justify-center space-x-3 px-4 py-3 bg-white/10 rounded-lg hover:bg-white/20 transition-colors cursor-pointer"
-              aria-label="Search"
-            >
-              <Search className="w-5 h-5 text-white/90" />
-              <span className="text-white/90 text-base font-medium">
-                Search
-              </span>
-            </button> */}
+            {/* Mobile Search */}
+            <div className="w-full">
+              <ExpandableSearchBar
+                onSearch={handleSearch}
+                placeholder="Search..."
+                suggestions={searchSuggestions}
+                iconColor="text-white/90"
+                hoverIconColor="hover:text-sky-400"
+                className="w-full"
+              />
+            </div>
 
             <Link
               href="/book-meeting"
