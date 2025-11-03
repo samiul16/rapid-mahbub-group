@@ -137,7 +137,7 @@ const PrivacyPolicy = () => {
               <p>
                 If you have any questions about these Terms, please{" "}
                 <a
-                  href="/contact"
+                  href="/contact-us"
                   className="text-blue-600 hover:text-blue-800 underline transition-colors"
                 >
                   contact us

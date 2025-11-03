@@ -150,7 +150,7 @@ export default function Footer() {
               Resources
             </h3>
             <ul className="space-y-2 flex-grow">
-              <li>
+              {/* <li>
                 <Link
                   href="/enquiry"
                   className="flex items-center gap-2 text-white text-lg hover:text-sky-300 transition-colors"
@@ -158,8 +158,8 @@ export default function Footer() {
                   <ChevronRight className="w-3 h-3 flex-shrink-0" />
                   Enquiry
                 </Link>
-              </li>
-              <li>
+              </li> */}
+              {/* <li>
                 <Link
                   href="/download"
                   className="flex items-center gap-2 text-white text-lg hover:text-sky-300 transition-colors"
@@ -167,7 +167,7 @@ export default function Footer() {
                   <ChevronRight className="w-3 h-3 flex-shrink-0" />
                   Download
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link
                   href="/faq"
