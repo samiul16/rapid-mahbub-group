@@ -192,7 +192,7 @@ const Navbar = () => {
           {/* Right Side Controls */}
           <div className="hidden md:flex items-center space-x-6">
             {/* Language Selector with Flag */}
-            <div className="relative" ref={langRef}>
+            {/* <div className="relative" ref={langRef}>
               <button
                 onClick={() => setIsLangDropdownOpen(!isLangDropdownOpen)}
                 className="flex items-center space-x-2 rounded-full px-3 py-2 hover:bg-white/10 transition-colors cursor-pointer"
@@ -212,8 +212,6 @@ const Navbar = () => {
                   }`}
                 />
               </button>
-
-              {/* Language Dropdown */}
               {isLangDropdownOpen && (
                 <div className="absolute top-full right-0 mt-2 w-40 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50">
                   <button
@@ -254,15 +252,15 @@ const Navbar = () => {
                   </button>
                 </div>
               )}
-            </div>
+            </div> */}
 
             {/* Search Icon */}
-            <button
+            {/* <button
               className={`w-10 h-10 ${styles.textColor} group-hover:text-sky-500 hover:bg-white/10 rounded-full flex items-center justify-center transition-colors cursor-pointer`}
               aria-label="Search"
             >
               <Search className="w-5 h-5" />
-            </button>
+            </button> */}
 
             {/* CTA Button */}
             <Link
@@ -414,7 +412,7 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Language Selector */}
-          <div className="mt-8 mb-4">
+          {/* <div className="mt-8 mb-4">
             <div className="flex items-center space-x-3 px-3 py-2 bg-white/10 rounded-lg">
               <Image
                 src="https://flagcdn.com/w40/us.png"
@@ -427,12 +425,10 @@ const Navbar = () => {
                 English
               </span>
             </div>
-          </div>
+          </div> */}
 
-          {/* Mobile Search and Book Now */}
           <div className="space-y-4">
-            {/* Mobile Search Button */}
-            <button
+            {/* <button
               className="w-full flex items-center justify-center space-x-3 px-4 py-3 bg-white/10 rounded-lg hover:bg-white/20 transition-colors cursor-pointer"
               aria-label="Search"
             >
@@ -440,9 +436,8 @@ const Navbar = () => {
               <span className="text-white/90 text-base font-medium">
                 Search
               </span>
-            </button>
+            </button> */}
 
-            {/* Mobile Book Now Button */}
             <Link
               href="/book-meeting"
               onClick={() => setIsMobileMenuOpen(false)}

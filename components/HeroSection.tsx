@@ -241,7 +241,7 @@ const HeroSection = () => {
           ))}
         </div>
 
-        <div
+        {/* <div
           className="absolute bottom-10 right-[120px] md:right-[200px]"
           data-aos="fade-left"
           data-aos-delay="800"
@@ -255,14 +255,13 @@ const HeroSection = () => {
               className="w-14 h-14 p-2"
             />
 
-            {/* 3 White Dots */}
             <div className="absolute inset-0 flex items-center justify-center gap-0.5 -translate-y-[1px]">
               <div className="w-1 h-1 bg-white rounded-full"></div>
               <div className="w-1 h-1 bg-white rounded-full"></div>
               <div className="w-1 h-1 bg-white rounded-full"></div>
             </div>
           </button>
-        </div>
+        </div> */}
       </div>
     </div>
   );

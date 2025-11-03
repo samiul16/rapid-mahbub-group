@@ -14,6 +14,7 @@ export async function POST(request: NextRequest) {
     const jobId = formData.get("jobId") as string;
     const cvFile = formData.get("cv") as File;
 
+    // Validate required fields
     if (!fullName || !email || !phone || !experience || !jobTitle || !cvFile) {
       return NextResponse.json(
         { error: "All required fields must be filled" },
@@ -21,8 +22,10 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // Convert file to buffer
     const cvBuffer = Buffer.from(await cvFile.arrayBuffer());
 
+    // Create transporter
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
       port: parseInt(process.env.SMTP_PORT || "587"),
@@ -33,9 +36,10 @@ export async function POST(request: NextRequest) {
       },
     });
 
+    // Email content
     const mailOptions = {
       from: process.env.SMTP_USER,
-      to: "saad.samiul85@gmail.com", // Change to your email
+      to: "info@rmeng.com",
       subject: `New Job Application: ${jobTitle} - ${fullName}`,
       html: `
         <!DOCTYPE html>
@@ -54,9 +58,9 @@ export async function POST(request: NextRequest) {
               background-color: #f9f9f9;
             }
             .header {
-              background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+              background-color: #0ea5e9;
               color: white;
-              padding: 30px 20px;
+              padding: 20px;
               text-align: center;
               border-radius: 8px 8px 0 0;
             }
@@ -64,7 +68,6 @@ export async function POST(request: NextRequest) {
               background-color: white;
               padding: 30px;
               border-radius: 0 0 8px 8px;
-              box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             }
             .field {
               margin-bottom: 20px;
@@ -76,23 +79,18 @@ export async function POST(request: NextRequest) {
               color: #0ea5e9;
               display: block;
               margin-bottom: 5px;
-              font-size: 14px;
             }
             .value {
               color: #333;
               word-wrap: break-word;
-              font-size: 15px;
             }
             .job-title {
-              background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
-              padding: 20px;
+              background-color: #f0f9ff;
+              padding: 15px;
               border-left: 4px solid #0ea5e9;
-              margin-bottom: 25px;
-              border-radius: 4px;
-            }
-            .job-title h2 {
-              margin: 0;
-              font-size: 20px;
+              margin-bottom: 20px;
+              font-size: 18px;
+              font-weight: bold;
               color: #0369a1;
             }
             .cover-letter {
@@ -100,54 +98,43 @@ export async function POST(request: NextRequest) {
               padding: 15px;
               border-left: 4px solid #0ea5e9;
               margin-top: 10px;
-              border-radius: 4px;
             }
             .attachment-note {
-              background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
-              padding: 15px;
+              background-color: #fef3c7;
+              padding: 10px;
               border-left: 4px solid #f59e0b;
-              margin-top: 25px;
-              border-radius: 4px;
+              margin-top: 20px;
               font-size: 14px;
-            }
-            .footer {
-              margin-top: 30px;
-              padding-top: 20px;
-              border-top: 2px solid #eee;
-              color: #666;
-              font-size: 12px;
             }
           </style>
         </head>
         <body>
           <div class="container">
             <div class="header">
-              <h1>🚗 New Job Application</h1>
-              <p style="margin: 10px 0 0 0; opacity: 0.9;">Rent A Car - Career Portal</p>
+              <h1>New Job Application Received</h1>
             </div>
             <div class="content">
               <div class="job-title">
-                <h2>📋 ${jobTitle}</h2>
-                <p style="margin: 5px 0 0 0; color: #64748b;">Job ID: ${jobId}</p>
+                Position Applied: ${jobTitle} (Job ID: ${jobId})
               </div>
 
               <div class="field">
-                <span class="label">👤 Full Name:</span>
+                <span class="label">Full Name:</span>
                 <span class="value">${fullName}</span>
               </div>
               
               <div class="field">
-                <span class="label">📧 Email:</span>
-                <span class="value"><a href="mailto:${email}" style="color: #0ea5e9; text-decoration: none;">${email}</a></span>
+                <span class="label">Email:</span>
+                <span class="value"><a href="mailto:${email}">${email}</a></span>
               </div>
               
               <div class="field">
-                <span class="label">📱 Phone:</span>
+                <span class="label">Phone:</span>
                 <span class="value">${phone}</span>
               </div>
               
               <div class="field">
-                <span class="label">💼 Years of Experience:</span>
+                <span class="label">Years of Experience:</span>
                 <span class="value">${experience}</span>
               </div>
               
@@ -155,7 +142,7 @@ export async function POST(request: NextRequest) {
                 coverLetter
                   ? `
               <div class="field">
-                <span class="label">📝 Cover Letter:</span>
+                <span class="label">Cover Letter:</span>
                 <div class="cover-letter">
                   ${coverLetter.replace(/\n/g, "<br>")}
                 </div>
@@ -165,23 +152,16 @@ export async function POST(request: NextRequest) {
               }
 
               <div class="attachment-note">
-                <strong>📎 CV/Resume Attached:</strong><br>
-                ${cvFile.name} (${(cvFile.size / 1024 / 1024).toFixed(2)} MB)
+                <strong>📎 CV/Resume Attached:</strong> ${cvFile.name} (${(
+        cvFile.size /
+        1024 /
+        1024
+      ).toFixed(2)} MB)
               </div>
               
-              <div class="footer">
+              <div style="margin-top: 30px; padding-top: 20px; border-top: 2px solid #eee; color: #666; font-size: 12px;">
                 <p>This application was submitted through the career page on your website.</p>
-                <p><strong>Submission Date:</strong> ${new Date().toLocaleString(
-                  "en-US",
-                  {
-                    weekday: "long",
-                    year: "numeric",
-                    month: "long",
-                    day: "numeric",
-                    hour: "2-digit",
-                    minute: "2-digit",
-                  }
-                )}</p>
+                <p>Date: ${new Date().toLocaleString()}</p>
               </div>
             </div>
           </div>
@@ -213,6 +193,7 @@ Date: ${new Date().toLocaleString()}
       ],
     };
 
+    // Send email
     await transporter.sendMail(mailOptions);
 
     return NextResponse.json(

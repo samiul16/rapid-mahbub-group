@@ -10,7 +10,7 @@ export async function POST(request: NextRequest) {
     console.log("Received body:", body);
 
     // Validate required fields
-    if (!fullName || !phone || !email || !message) {
+    if (!fullName || !phone || !email || !description || !message) {
       return NextResponse.json(
         { error: "All fields are required" },
         { status: 400 }
@@ -31,7 +31,7 @@ export async function POST(request: NextRequest) {
     // Email content
     const mailOptions = {
       from: process.env.SMTP_USER,
-      to: "saad.samiul85@gmail.com",
+      to: "info@rmeng.com",
       subject: `New Contact Form Submission from ${fullName}`,
       html: `
         <!DOCTYPE html>

@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Image from "next/image";
+import { Toaster } from "react-hot-toast";
 
 const notoSans = Noto_Sans({
   subsets: ["latin"],
@@ -26,6 +27,56 @@ export default function RootLayout({
       <body
         className={`${notoSans.className} antialiased bg-white overflow-x-hidden`}
       >
+        {/* Global Toast Notifications */}
+        <Toaster
+          position="top-right"
+          reverseOrder={false}
+          gutter={8}
+          containerStyle={{
+            top: 80, // Adjust this to position below navbar if needed
+          }}
+          toastOptions={{
+            duration: 4000,
+            style: {
+              fontSize: "14px",
+              maxWidth: "500px",
+            },
+            success: {
+              duration: 5000,
+              style: {
+                background: "#10b981",
+                color: "#fff",
+                padding: "16px",
+                borderRadius: "8px",
+              },
+              iconTheme: {
+                primary: "#fff",
+                secondary: "#10b981",
+              },
+            },
+            error: {
+              duration: 4000,
+              style: {
+                background: "#ef4444",
+                color: "#fff",
+                padding: "16px",
+                borderRadius: "8px",
+              },
+              iconTheme: {
+                primary: "#fff",
+                secondary: "#ef4444",
+              },
+            },
+            loading: {
+              style: {
+                background: "#3b82f6",
+                color: "#fff",
+                padding: "16px",
+                borderRadius: "8px",
+              },
+            },
+          }}
+        />
         <Navbar />
         {children}
         <Footer />
@@ -53,9 +104,9 @@ export default function RootLayout({
             </div>
 
             {/* Phone Number - Always Visible */}
-            <div className="bg-black/20 backdrop-blur-sm text-white px-4 py-1 rounded-lg text-base font-semibold shadow-lg border border-white/10">
+            {/* <div className="bg-black/20 backdrop-blur-sm text-white px-4 py-1 rounded-lg text-base font-semibold shadow-lg border border-white/10">
               +966 50 517 6100
-            </div>
+            </div> */}
           </a>
         </div>
       </body>

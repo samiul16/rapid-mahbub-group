@@ -19,6 +19,7 @@ import {
 } from "lucide-react";
 import { useRouter, useParams } from "next/navigation";
 import Header from "@/app/career/Header";
+import toast from "react-hot-toast";
 
 interface Job {
   id: number;
@@ -325,11 +326,7 @@ const JobApplicationPage = () => {
       const data = await response.json();
 
       if (response.ok) {
-        setSubmitStatus({
-          type: "success",
-          message:
-            "Thank you for your application! We have received your CV and will review it shortly. We'll contact you if your profile matches our requirements.",
-        });
+        toast.success("Application submitted successfully!");
         setFormData({
           fullName: "",
           email: "",
@@ -340,18 +337,13 @@ const JobApplicationPage = () => {
         });
         window.scrollTo({ top: 0, behavior: "smooth" });
       } else {
-        setSubmitStatus({
-          type: "error",
-          message:
-            data.error || "Failed to submit application. Please try again.",
-        });
+        toast.error(
+          data.error || "Failed to submit application. Please try again."
+        );
       }
     } catch (error) {
       console.error("Error submitting application:", error);
-      setSubmitStatus({
-        type: "error",
-        message: "An error occurred. Please try again later.",
-      });
+      toast.error("An error occurred. Please try again later.");
     } finally {
       setIsSubmitting(false);
     }

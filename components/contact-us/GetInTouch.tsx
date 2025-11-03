@@ -10,6 +10,7 @@ import {
   AlertCircle,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import toast from "react-hot-toast";
 
 export default function ContactFormSection() {
   const [formData, setFormData] = useState({
@@ -52,11 +53,7 @@ export default function ContactFormSection() {
       const data = await response.json();
 
       if (response.ok) {
-        setSubmitStatus({
-          type: "success",
-          message:
-            "Thank you! Your message has been sent successfully. We'll get back to you soon.",
-        });
+        toast.success("Message sent successfully!");
         // Reset form
         setFormData({
           fullName: "",
@@ -71,17 +68,11 @@ export default function ContactFormSection() {
           setSubmitStatus({ type: null, message: "" });
         }, 5000);
       } else {
-        setSubmitStatus({
-          type: "error",
-          message: data.error || "Failed to send message. Please try again.",
-        });
+        toast.error(data.error || "Failed to send message. Please try again.");
       }
     } catch (error) {
       console.error("Error submitting form:", error);
-      setSubmitStatus({
-        type: "error",
-        message: "An error occurred. Please try again later.",
-      });
+      toast.error("An error occurred. Please try again later.");
     } finally {
       setIsSubmitting(false);
     }
