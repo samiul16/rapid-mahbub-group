@@ -13,19 +13,19 @@ const WhoWeAre = () => {
       id: "mission",
       title: "Our Mission",
       content:
-        "To deliver exceptional dining experiences through quality food, warm hospitality, and authentic flavors that bring people together and create lasting memories.",
+        "To be a globally recognized group of companies that exemplifies integrity, innovation, and excellence in every field we operate—contributing meaningfully to economic growth and community development.",
     },
     {
       id: "vision",
       title: "Our Vision",
       content:
-        "To become a recognized name in the culinary world, expanding our reach while maintaining our commitment to quality, authenticity, and customer satisfaction.",
+        "To deliver world-class products and services across industries, driven by innovation, quality, and a commitment to ethical business practices—creating lasting value for clients, partners, and communities.",
     },
     {
       id: "values",
       title: "Our Values",
       content:
-        "Quality, authenticity, hospitality, innovation, and community. We believe in serving food that not only tastes great but also brings people together.",
+        "Our core values define who we are and how we work. We operate with integrity by conducting business with honesty and transparency, while always pursuing excellence and the highest standards in every task we take on.. Above all, we value people — empowering individuals to grow, succeed, and make a meaningful impact.",
     },
   ];
 
@@ -84,17 +84,16 @@ const WhoWeAre = () => {
                 About Mahbub
               </h2>
               <p className="text-base text-sky-900 leading-relaxed text-justify">
-                Excellency was born from a passion for authentic flavor, warm
-                hospitality, and an unwavering commitment to quality.
-                Established in 2014, we started as a small dining spot with a
-                big dream — to bring people together over food that feels like
-                home. Our founders, inspired by culinary traditions from around
-                the world, laid the foundation for a restaurant that values
-                heart, heritage, and honest taste.Over the years, our name has
-                become a symbol of consistency, taste, and trust. What began
-                with a few tables and a handful of signature dishes has now
-                grown into a destination for food lovers seeking a memorable
-                experience.
+                The Mahbub Group of Companies stands as a dynamic and
+                diversified enterprise built on a foundation of trust,
+                innovation, and a relentless pursuit of excellence. Guided by a
+                shared vision of progress and integrity, the Group continues to
+                expand its footprint across multiple industries—uniting
+                expertise, innovation, and people to create sustainable value
+                worldwide. Across its four key subsidiaries, Mahbub Group has
+                established itself as a trusted leader delivering quality,
+                reliability, and growth opportunities in every venture it
+                undertakes.
               </p>
             </motion.div>
 

@@ -89,27 +89,27 @@ const ClientTestimonials = () => {
   const testimonialsData: TestimonialData[] = [
     {
       id: 1,
-      name: "Stephanie Hutchkiss",
+      name: "Omar Al-Farsi,",
       title: "",
       image: "/client/1.jpg",
       testimonial:
-        "I have been using Rentaly for my Car Rental needs for over 5 years now. I have never had any problems with their service. Their customer support is always responsive and helpful. I would recommend Rentaly to anyone looking for a reliable Car Rental provider",
+        "Excellency General Trading manages our global commodity supply chain with remarkable efficiency. Their proactive communication and flawless documentation make them a truly trusted, strategic logistics partner. On-time delivery with zero compromise on quality standards.",
     },
     {
       id: 2,
-      name: "Michael Johnson",
+      name: "Sarah Jenkins",
       title: "",
       image: "/client/2.jpg",
       testimonial:
-        "Amazing experience with this car rental service! The vehicles are always clean, well-maintained, and the booking process is seamless. The staff is professional and goes above and beyond to ensure customer satisfaction.",
+        "The Mahbub Group's construction team delivered our new corporate headquarters ahead of schedule, exceeding our quality expectations. Their project management was professional, highly transparent, and they maintained exceptional health and safety standards throughout the entire build.",
     },
     {
       id: 3,
-      name: "Sarah Williams",
+      name: " David Miah",
       title: "",
       image: "/client/3.jpg",
       testimonial:
-        "I've used many car rental services, but this one stands out for its reliability and professionalism. The cars are luxury vehicles in perfect condition, and the pricing is very competitive. Highly recommended!",
+        "Switching to Mahbub Group’s feed products gave us the consistency and quality we needed. We've seen measurable improvements in our livestock productivity, thanks to their valuable nutritional consultation and technical support. It's a truly supportive partnership.",
     },
     {
       id: 4,
@@ -170,10 +170,10 @@ const ClientTestimonials = () => {
           Hear From Our Clients
         </h2>
         <p className="text-cyan-900 text-lg md:text-xl leading-relaxed">
-          Clients are consistently satisfied with our services, praising our
-          attention to detail and prompt communication. Our solutions have
-          improved their operations, and we take pride in exceeding
-          expectations.
+          Our clients consistently express satisfaction with our services,
+          highlighting our strong attention to detail and fast communication.
+          Their feedback reflects how our solutions have improved their daily
+          operations and overall performance.
         </p>
       </div>
 

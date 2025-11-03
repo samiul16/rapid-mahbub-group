@@ -9,9 +9,9 @@ import { motion } from "framer-motion";
 const OurBlog = () => {
   const featuredPost = {
     id: 1,
-    title: "Essential Tools for Successful Trading at Home",
+    title: " The Invisible Hand: How Smart Trading Fuels Global Growth",
     excerpt:
-      "Transform your workspace with these essential gadgets that enhance productivity and comfort. Transform your workspace with these essential gadgets that enhance productivity and comfort...",
+      "Did you know your morning coffee and your smartphone rely on a seamless, global trade choreography? Discover the precision logistics and ethical backbone that keep the world's supply chains moving efficiently.",
     image: "/bb.jpg",
     date: "26 Sep 2025",
     category: "Trading",
@@ -21,27 +21,29 @@ const OurBlog = () => {
   const sidebarPosts = [
     {
       id: 2,
-      title: "Exploring the Art of Construction",
+      title:
+        "Why the Future of Property Lies in Smart, Sustainable Infrastructure?",
       excerpt:
-        "On September 26, 2024, the construction industry is set to witness significant advancements in sustainable building practices. As more...",
+        "The future isn't just being dreamed up—it's being built, brick by ethical brick. Explore how the Mahbub Group is using advanced, eco-friendly technology to construct modern infrastructure.",
       image: "/bc.jpg",
       date: "September 26, 2024",
       slug: "exploring-art-construction-1",
     },
     {
       id: 3,
-      title: "Exploring the Art of Construction",
+      title:
+        "Beyond the Plate: The Art of Crafting a Memorable Dining Experience",
       excerpt:
-        "On September 26, 2024, the construction industry is set to witness significant advancements in sustainable building practices. As more...",
+        " What turns a meal into a memorable moment? It's more than just the food on your plate. Learn how Excellency Restaurants blends culinary creativity, culture, and care to set a new standard for hospitality.",
       image: "/bc.jpg",
       date: "September 26, 2024",
       slug: "exploring-art-construction-2",
     },
     {
       id: 4,
-      title: "Exploring the Art of Construction",
+      title: "Bridging Talent Gaps: Ethical Recruitment in a Borderless World",
       excerpt:
-        "On September 26, 2024, the construction industry is set to witness significant advancements in sustainable building practices. As more...",
+        "Your next career opportunity might be waiting thousands of miles away—if you have the right partner.  Discover how RM Orient is pioneering ethical, transparent, and people-centered global talent placement.",
       image: "/bc.jpg",
       date: "September 26, 2024",
       slug: "exploring-art-construction-3",

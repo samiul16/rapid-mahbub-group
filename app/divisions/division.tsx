@@ -44,7 +44,7 @@ const Division = () => {
             Our Industries
           </h2>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-            Lorem ipsum dolor sit amet consectetur. Nisl etiam
+            Embracing change and advancing through creativity.
           </p>
         </div>
 
