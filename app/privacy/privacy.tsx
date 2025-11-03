@@ -12,118 +12,170 @@ const PrivacyPolicy = () => {
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Privacy Policy
             </h1>
-            <p className="text-sm text-gray-600">
-              By using this Service and accessing this website, you are agreeing
-              to be bound by these Terms of Service, all applicable laws and
-              regulations, and agree that you are responsible for compliance
-              with any applicable local laws.
+            <p className="text-sm text-gray-600 mb-4">
+              <strong>Effective Date:</strong> November 3, 2025
+            </p>
+            <p className="text-lg text-gray-600">
+              The Mahbub Group of Industries (&quot;Mahbub Group,&quot; &quot;we,&quot;
+              &quot;us,&quot; or &quot;our&quot;) is deeply committed to protecting the privacy and
+              security of your personal information. This Privacy Policy
+              outlines how we collect, use, disclose, and safeguard your
+              information when you interact with our websites, applications, and
+              services (collectively, the &quot;Services&quot;).
             </p>
           </div>
 
-          {/* The type of personal information we collect */}
+          {/* Information We Collect */}
           <section className="mb-8">
             <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">
-              The type of personal information we collect
+              1. Information We Collect
             </h2>
             <div className="space-y-4 text-gray-700 leading-relaxed">
               <p>
-                Our Service may contain links to third-party web sites or
-                services that are not owned or controlled by Evans.
+                We may collect personal information about you in various ways,
+                primarily when you interact with us through our Services,
+                including:
               </p>
               <p>
-                Evans has no control over, and assumes no responsibility for,
-                the content, privacy policies, or practices of any third-party
-                web sites or services. You further acknowledge and agree that
-                Evans shall not be responsible or liable, directly or
-                indirectly, for any damage or loss caused or alleged to be
-                caused by or in connection with use of or reliance on any such
-                content, goods or services available on or through any such web
-                sites or services.
+                <strong>Contact Information:</strong> Name, email address, phone
+                number, and physical mailing address when you use the Enquiry
+                forms or subscribe to newsletters.
               </p>
               <p>
-                Our Service may contain links to third-party web sites or
-                services that are not owned or controlled by Evans.
+                <strong>Professional Data:</strong> Job title, company name, and
+                industry information when engaging in business-to-business
+                activities or submitting a job application.
+              </p>
+              <p>
+                <strong>Technical Data:</strong> Internet Protocol (IP) address,
+                browser type, operating system, and data collected via cookies
+                and similar tracking technologies when you use our websites.
+              </p>
+              <p>
+                <strong>Transaction Data:</strong> Details about services you
+                have procured or enquired about, such as construction project
+                details or bulk trading orders.
               </p>
             </div>
           </section>
 
-          {/* Termination */}
+          {/* How We Use Your Information */}
           <section className="mb-8">
             <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">
-              Termination
+              2. How We Use Your Information
             </h2>
             <div className="space-y-4 text-gray-700 leading-relaxed">
               <p>
-                Our Service may contain links to third-party web sites or
-                services that are not owned or controlled by Evans.
+                We use the information we collect for the following legitimate
+                business purposes:
               </p>
               <p>
-                Evans has no control over, and assumes no responsibility for,
-                the content, privacy policies, or practices of any third-party
-                web sites or services. You further acknowledge and agree that
-                Evans shall not be responsible or liable, directly or
-                indirectly, for any damage or loss caused or alleged to be
-                caused by or in connection with use of or reliance on any such
-                content, goods or services available on or through any such web
-                sites or services.
+                <strong>Service Delivery:</strong> To fulfill your requests,
+                process transactions, and provide the services you have
+                requested, such as responding to a project tender.
               </p>
               <p>
-                Our Service may contain links to third-party web sites or
-                services that are not owned or controlled by Evans.
+                <strong>Communication:</strong> To send you updates, company
+                news, and marketing materials related to the Mahbub Group that
+                we believe may be of interest to you, based on your preferences.
+              </p>
+              <p>
+                <strong>Internal Operations:</strong> For auditing, data
+                analysis, troubleshooting, and improving the functionality and
+                security of our Services.
+              </p>
+              <p>
+                <strong>Compliance:</strong> To comply with legal obligations,
+                regulatory requirements, and internal policies, including those
+                related to ethical hiring and trade.
               </p>
             </div>
           </section>
 
-          {/* Governing Law */}
+          {/* Sharing and Disclosure */}
           <section className="mb-8">
             <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">
-              Governing Law
+              3. Sharing and Disclosure of Information
             </h2>
             <div className="space-y-4 text-gray-700 leading-relaxed">
               <p>
-                Our Service may contain links to third-party web sites or
-                services that are not owned or controlled by Evans.
+                We do not sell your personal data. We may share your information
+                only under the following limited circumstances:
               </p>
               <p>
-                Evans has no control over, and assumes no responsibility for,
-                the content, privacy policies, or practices of any third-party
-                web sites or services. You further acknowledge and agree that
-                Evans shall not be responsible or liable, directly or
-                indirectly, for any damage or loss caused or alleged to be
-                caused by or in connection with use of or reliance on any such
-                content, goods or services available on or through any such web
-                sites or services.
+                <strong>Internal Group Sharing:</strong> We may share data among
+                the subsidiaries and affiliates of the Mahbub Group (e.g.,
+                between the Construction and Trading divisions) to fulfill a
+                comprehensive service request initiated by you.
               </p>
               <p>
-                Our Service may contain links to third-party web sites or
-                services that are not owned or controlled by Evans.
+                <strong>Service Providers:</strong> We engage trusted
+                third-party companies and individuals to perform services on our
+                behalf (e.g., IT and hosting, analytics, legal counsel). These
+                service providers are obligated to protect your data.
+              </p>
+              <p>
+                <strong>Legal Requirements:</strong> We may disclose your
+                information if required to do so by law or in response to valid
+                requests by public authorities.
               </p>
             </div>
           </section>
 
-          {/* Changes */}
+          {/* Data Security */}
           <section className="mb-8">
             <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">
-              Changes
+              4. Data Security
             </h2>
             <div className="space-y-4 text-gray-700 leading-relaxed">
               <p>
-                Our Service may contain links to third-party web sites or
-                services that are not owned or controlled by Evans.
+                The Mahbub Group implements robust administrative, technical,
+                and physical measures designed to protect your personal
+                information from unauthorized access, loss, misuse, disclosure,
+                alteration, or destruction. While we strive to protect your
+                data, no method of transmission over the Internet or method of
+                electronic storage is 100% secure.
+              </p>
+            </div>
+          </section>
+
+          {/* Your Rights and Choices */}
+          <section className="mb-8">
+            <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">
+              5. Your Rights and Choices
+            </h2>
+            <div className="space-y-4 text-gray-700 leading-relaxed">
+              <p>
+                Depending on your jurisdiction, you may have the following
+                rights regarding your personal information:
               </p>
               <p>
-                Evans has no control over, and assumes no responsibility for,
-                the content, privacy policies, or practices of any third-party
-                web sites or services. You further acknowledge and agree that
-                Evans shall not be responsible or liable, directly or
-                indirectly, for any damage or loss caused or alleged to be
-                caused by or in connection with use of or reliance on any such
-                content, goods or services available on or through any such web
-                sites or services.
+                <strong>Access:</strong> The right to request access to the
+                personal data we hold about you.
               </p>
               <p>
-                Our Service may contain links to third-party web sites or
-                services that are not owned or controlled by Evans.
+                <strong>Correction:</strong> The right to request that we
+                correct any inaccurate or incomplete personal information.
+              </p>
+              <p>
+                <strong>Withdraw Consent:</strong> Where we rely on your consent
+                to process your personal data, you have the right to withdraw
+                that consent at any time.
+              </p>
+            </div>
+          </section>
+
+          {/* Changes to this Policy */}
+          <section className="mb-8">
+            <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">
+              6. Changes to this Policy
+            </h2>
+            <div className="space-y-4 text-gray-700 leading-relaxed">
+              <p>
+                We reserve the right to update this Privacy Policy at any time.
+                We will notify you of any changes by posting the new policy on
+                this page and updating the &quot;Effective Date&quot; at the
+                top. We encourage you to review this Policy periodically.
               </p>
             </div>
           </section>

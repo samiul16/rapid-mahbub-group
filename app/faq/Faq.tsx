@@ -7,35 +7,52 @@ export default function FAQSection() {
 
   const faqs = [
     {
-      question: "How Long Does a Construction Project Take?",
+      question:
+        "What are the primary sectors of the Mahbub Group of Industries?",
       answer:
-        "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout",
+        "The Mahbub Group is a diversified conglomerate operating across four primary sectors: Global Trading & Logistics, Construction & Real Estate, Hospitality & Dining, and Global Workforce Solutions.",
     },
     {
-      question: "What sets Mahbub Group apart in design?",
+      question: "Is the Mahbub Group committed to sustainability?",
       answer:
-        "We provide end-to-end IT solutions including software development, maintenance services, manpower supply, and technology consulting to help businesses optimize their operations and achieve their goals.",
+        "Yes. We integrate environmental, social, and governance (ESG) factors into our core operations. This includes using eco-friendly materials in construction, promoting responsible sourcing, and ensuring ethical labor practices in our trading and workforce solutions.",
     },
     {
-      question: "What is the typical budget for a construction project?",
+      question: "Where does the Mahbub Group primarily operate?",
       answer:
-        "Manpower supply is the service of providing skilled IT professionals and technical resources to organizations on a temporary or permanent basis to meet their staffing requirements and project needs.",
-    },
-    {
-      question: "Does Mahbub Group prioritize sustainability?",
-      answer:
-        "Outsourcing allows companies to access specialized expertise, reduce operational costs, focus on core business activities, scale resources flexibly, and accelerate project delivery timelines.",
-    },
-    {
-      question: "What construction software do you prefer?",
-      answer:
-        "Temping (temporary staffing) is the practice of hiring skilled professionals for short-term assignments or project-based work, providing flexibility for both employers and workers.",
+        "While we maintain a strong home presence, our operations are globally connected, with significant activity in Global Trading and Workforce Solutions across Asia, the Middle East, and beyond.",
     },
     {
       question:
-        "How does Mahbub Group ensure quality control throughout the construction process?",
+        "What types of dining experiences do Excellency Restaurants offer?",
       answer:
-        "Temping (temporary staffing) is the practice of hiring skilled professionals for short-term assignments or project-based work, providing flexibility for both employers and workers.",
+        "Excellency Restaurants focuses on diverse, high-quality culinary experiences, ranging from casual dining to fine-dining concepts, often specializing in local and international cuisine prepared with premium ingredients.",
+    },
+    {
+      question: "Can I book a private event or catering service?",
+      answer:
+        "Yes. Our Hospitality division offers comprehensive services for private events, corporate catering, and large-scale banqueting. Please contact our hospitality team via the Enquiry page to discuss your specific event requirements and options.",
+    },
+    {
+      question:
+        "What types of projects does your construction division handle?",
+      answer:
+        "We specialize in large-scale commercial, industrial, and residential projects, including high-rise structures, infrastructure development, and specialized, sustainable building solutions. We manage projects from planning and design through to final handover.",
+    },
+    {
+      question: "Are your construction materials certified?",
+      answer:
+        "All materials used, including our specialized auto-bricks and cement products, meet relevant national and international standards (e.g., ASTM, ISO, BDS) and undergo internal material strength and durability testing.",
+    },
+    {
+      question: "What commodities does your trading division handle?",
+      answer:
+        "Excellency General Trading specializes in both sourcing and distribution of essential commodities, including raw materials for industrial use, agricultural products, and specialized equipment.",
+    },
+    {
+      question: "How does the Mahbub Group ensure ethical recruitment?",
+      answer:
+        "Through RM Orient Overseas, we adhere strictly to international labor laws and ethical recruitment guidelines. We focus on transparency, fair wages, and worker well-being, ensuring a safe and beneficial employment opportunity for all placed personnel.",
     },
   ];
 
@@ -45,8 +62,13 @@ export default function FAQSection() {
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-sky-500 mb-3">
-            FAQ&apos;S
+            Frequently Asked Questions (FAQs)
           </h1>
+          <p className="text-gray-600 text-lg max-w-4xl mx-auto">
+            Welcome to the Mahbub Group FAQ center. We have compiled answers to
+            common questions regarding our structure, business operations, and
+            commitment to quality across our diverse portfolio.
+          </p>
         </div>
 
         {/* FAQ Items */}

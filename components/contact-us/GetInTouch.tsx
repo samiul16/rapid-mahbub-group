@@ -82,21 +82,21 @@ export default function ContactFormSection() {
     {
       icon: Phone,
       title: "Phone",
-      content: "+971 54 324 7559",
+      content: "+971543247559",
       link: "tel:+971543247559",
     },
     {
       icon: Mail,
       title: "Email",
-      content: "info@mahbubgroup.com",
-      link: "mailto:info@mahbubgroup.com",
+      content: "marium.marufa@gmail.com",
+      link: "mailto:marium.marufa@gmail.com",
     },
     {
       icon: MapPin,
       title: "Location",
       content:
-        "Abdul wahed Al Malqa, Batha Quraish Dist, Makkah, Kingdom of Saudi Arabia, P.O. Box: 24353",
-      link: "https://maps.google.com/?q=Abdul+wahed+Al+Malqa+Makkah+Saudi+Arabia",
+        "Ajman Industrial Area 1, Ajman Industrial 1, United Arab Emirates, 0000",
+      link: "https://maps.google.com/?q=Ajman+Industrial+Area+1+United+Arab+Emirates",
     },
   ];
 
