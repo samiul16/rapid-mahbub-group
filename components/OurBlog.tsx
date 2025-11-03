@@ -132,9 +132,9 @@ const OurBlog = () => {
                 whileHover={{ x: 5 }}
                 transition={{ duration: 0.2 }}
               >
-                <Link href={`/blog/${featuredPost.slug}`}>
-                  {featuredPost.title}
-                </Link>
+                {/* <Link href={`/blog/${featuredPost.slug}`}> */}
+                {featuredPost.title}
+                {/* </Link> */}
               </motion.h3>
               <motion.p
                 className="text-gray-600 mb-4 leading-relaxed"
@@ -211,7 +211,7 @@ const OurBlog = () => {
                       whileHover={{ x: 3 }}
                       transition={{ duration: 0.2 }}
                     >
-                      <Link href={`/blog/${post.slug}`}>{post.title}</Link>
+                      {post.title}
                     </motion.h4>
                     <motion.p
                       className="text-gray-600 text-sm mb-2 line-clamp-2"

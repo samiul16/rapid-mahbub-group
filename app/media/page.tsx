@@ -45,7 +45,7 @@ const OurMedia = () => {
     {
       id: 4,
       type: "video",
-      src: "https://www.youtube.com/watch?v=mbwuj58UEPg&t=23s",
+      src: "https://www.youtube.com/watch?v=Do0VwUcZcxc",
       thumbnail: "/media/4.png",
       alt: "Company Video",
       size: "large",
