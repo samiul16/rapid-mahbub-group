@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import Image from "next/image";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -15,11 +14,36 @@ const HeroSection = () => {
     "/hero/5.png",
   ];
 
+  // Array of content for each slide
+  const slideContent = [
+    {
+      title: "Building Excellence Across Industries",
+      subtitle: "From Global Trade to Fine Dining: Quality in Every Venture.",
+    },
+    {
+      title: "Innovating Today, Leading Tomorrow",
+      subtitle:
+        "Connecting Markets, Crafting Garments, Serving Communities, Placing Talent.",
+    },
+    {
+      title: "The Foundation of Global Partnership",
+      subtitle:
+        "Integrated strength in Manufacturing, Trade, Hospitality, and Overseas Recruitment.",
+    },
+    {
+      title: "Where Integrity Meets Global Scale",
+      subtitle:
+        "Diverse Companies, One Commitment: Delivering Uncompromising Standards Worldwide.",
+    },
+    {
+      title: "Your Vision, Our Execution.",
+      subtitle:
+        "Enabling Success: Apparel, Commerce, Cuisine, and Career Mobility under one Group.",
+    },
+  ];
+
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
-  const [isPaused, setIsPaused] = useState(false);
-  const [isVisible, setIsVisible] = useState(true);
-  const heroRef = React.useRef<HTMLDivElement>(null);
   const totalSlides = backgroundImages.length;
 
   // Initialize AOS
@@ -32,70 +56,19 @@ const HeroSection = () => {
     });
   }, []);
 
-  // Scroll-based visibility detection
+  // Auto-slide functionality - always loop every 3 seconds
   useEffect(() => {
-    const handleScroll = () => {
-      if (heroRef.current) {
-        const rect = heroRef.current.getBoundingClientRect();
-        const isInView = rect.top < window.innerHeight && rect.bottom > 0;
-        setIsVisible(isInView);
-      }
-    };
-
-    // Initial check
-    handleScroll();
-
-    // Add scroll listener
-    window.addEventListener("scroll", handleScroll, { passive: true });
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  // Auto-slide functionality
-  useEffect(() => {
-    console.log("Auto-slide check:", { isPaused, isTransitioning, isVisible });
-
-    if (isPaused || isTransitioning || !isVisible) return;
-
     const autoSlideInterval = setInterval(() => {
-      console.log("Auto-slide triggered");
-      setIsTransitioning(true);
       setCurrentSlide((prev) => (prev === totalSlides - 1 ? 0 : prev + 1));
     }, 3000);
 
     return () => clearInterval(autoSlideInterval);
-  }, [isPaused, isTransitioning, isVisible, totalSlides]);
-
-  const handlePrevSlide = () => {
-    if (isTransitioning) return;
-    setIsPaused(true);
-    setIsTransitioning(true);
-    setCurrentSlide((prev) => (prev === 0 ? totalSlides - 1 : prev - 1));
-
-    // Resume auto-slide after 5 seconds of manual interaction
-    setTimeout(() => setIsPaused(false), 5000);
-  };
-
-  const handleNextSlide = () => {
-    if (isTransitioning) return;
-    setIsPaused(true);
-    setIsTransitioning(true);
-    setCurrentSlide((prev) => (prev === totalSlides - 1 ? 0 : prev + 1));
-
-    // Resume auto-slide after 5 seconds of manual interaction
-    setTimeout(() => setIsPaused(false), 5000);
-  };
+  }, [totalSlides]);
 
   const goToSlide = (index: number) => {
-    if (isTransitioning || index === currentSlide) return;
-    setIsPaused(true);
+    if (index === currentSlide) return;
     setIsTransitioning(true);
     setCurrentSlide(index);
-
-    // Resume auto-slide after 5 seconds of manual interaction
-    setTimeout(() => setIsPaused(false), 5000);
   };
 
   // Reset transition state after animation completes
@@ -109,12 +82,7 @@ const HeroSection = () => {
   }, [isTransitioning]);
 
   return (
-    <div
-      ref={heroRef}
-      className="relative w-full h-[663px] md:h-screen overflow-hidden"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
-    >
+    <div className="relative w-full h-[663px] md:h-screen overflow-hidden">
       {/* Background Images with Advanced Animations */}
       {backgroundImages.map((image, index) => (
         <div
@@ -200,7 +168,7 @@ const HeroSection = () => {
               animation: isTransitioning ? "none" : "fadeInUp 1s ease-out",
             }}
           >
-            Empowering Lifestyle, Work & Business — All Under One Roof
+            {slideContent[currentSlide].title}
           </h1>
 
           <p
@@ -209,8 +177,7 @@ const HeroSection = () => {
               textShadow: "1px 1px 3px rgba(0,0,0,0.5)",
             }}
           >
-            From quality garments and fine dining to workforce solutions and
-            trading excellence — we deliver across industries
+            {slideContent[currentSlide].subtitle}
           </p>
         </div>
 
@@ -224,12 +191,11 @@ const HeroSection = () => {
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              disabled={isTransitioning}
               className={`h-3 rounded-full transition-all duration-500 cursor-pointer transform hover:scale-125 active:scale-90 ${
                 currentSlide === index
                   ? "bg-sky-500 w-8 shadow-lg"
                   : "bg-indigo-50 hover:bg-indigo-100 w-3"
-              } ${isTransitioning ? "opacity-50 cursor-not-allowed" : ""}`}
+              }`}
               style={{
                 boxShadow:
                   currentSlide === index

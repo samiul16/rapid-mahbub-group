@@ -46,7 +46,7 @@ export default function MapSection() {
           shadowSize: [41, 41],
         });
 
-        const position: [number, number] = [25.3463, 55.4209];
+        const position: [number, number] = [25.4052, 55.5136];
 
         // Map control component to handle centering
         const MapController = ({
@@ -102,19 +102,21 @@ export default function MapSection() {
                 <Marker position={position} icon={redIcon}>
                   <Popup className="custom-popup">
                     <div className="p-2">
-                      <h3 className="font-bold text-lg mb-2">ADMS Office</h3>
+                      <h3 className="font-bold text-lg mb-2">
+                        Mahbub Group Office
+                      </h3>
                       <p className="text-sm text-gray-600 mb-2">
-                        Al Majaz Jamal Abdul Nasser Street
+                        Ajman Industrial Area 1
                         <br />
-                        Ground Floor (G-1)
+                        Ajman Industrial 1
                         <br />
-                        Sharjah, UAE
+                        United Arab Emirates
                       </p>
                       <div className="text-sm">
+                        <p className="font-semibold">Phone: +971 54 324 7559</p>
                         <p className="font-semibold">
-                          Phone: +971 (02) 633 0660
+                          Email: marium.marufa@gmail.com
                         </p>
-                        <p className="font-semibold">Email: info@admsuae.com</p>
                       </div>
                     </div>
                   </Popup>
@@ -125,7 +127,7 @@ export default function MapSection() {
               <div className="absolute top-2 left-2 z-10 bg-white rounded-lg shadow-lg border border-gray-200 p-4 max-w-xs">
                 <div className="flex items-start justify-between mb-3">
                   <h3 className="text-lg font-bold text-gray-900">
-                    1 Building
+                    Mahbub Group
                   </h3>
 
                   {/* direction for moving map */}
@@ -157,8 +159,8 @@ export default function MapSection() {
                 </div>
 
                 <div className="text-sm text-gray-600 mb-3 leading-relaxed">
-                  <p>1 Building · 2 Jamal Abdul Naser St ·</p>
-                  <p>Al Majaz 2 · Al Majaz · Sharjah ·</p>
+                  <p>Ajman Industrial Area 1 ·</p>
+                  <p>Ajman Industrial 1 ·</p>
                   <p>United Arab Emirates</p>
                 </div>
 

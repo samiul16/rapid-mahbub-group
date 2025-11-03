@@ -243,27 +243,31 @@ export default function Footer() {
               <div className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 text-white flex-shrink-0 mt-0.5" />
                 <div className="text-white text-md leading-relaxed">
-                  <p>Lucky Roundabout</p>
+                  {/* <p>Lucky Roundabout</p>
                   <p>Industrial Area-1, Ajman</p>
-                  <p>United Arab Emirates</p>
+                  <p>United Arab Emirates</p> */}
+                  <p>
+                    Address- ajman industrial area 1, Ajman Industrial 1, United
+                    Arab Emirates, 0000
+                  </p>
                 </div>
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-white flex-shrink-0" />
                 <Link
-                  href="tel:+97154342750"
+                  href="tel:+971543247559"
                   className="text-white text-lg hover:text-sky-300 transition-colors"
                 >
-                  +971 54 342 7550
+                  +971 54 324 7559
                 </Link>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-white flex-shrink-0" />
                 <Link
-                  href="mailto:info@mahbubgroupuae.com"
+                  href="mailto:marium.marufa@gmail.com"
                   className="text-white text-lg hover:text-sky-300 transition-colors"
                 >
-                  info@mahbubgroupuae.com
+                  marium.marufa@gmail.com
                 </Link>
               </div>
             </div>

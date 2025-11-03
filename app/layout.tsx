@@ -84,7 +84,7 @@ export default function RootLayout({
         {/* Global WhatsApp Button - Bottom Right */}
         <div className="fixed bottom-6 right-6 z-50">
           <a
-            href="https://wa.me/966505176100"
+            href="https://wa.me/+971543247559"
             target="_blank"
             rel="noopener noreferrer"
             className="group flex flex-col items-center space-y-2 transition-all duration-300"

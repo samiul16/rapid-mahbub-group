@@ -45,7 +45,7 @@ const OurMedia = () => {
     {
       id: 4,
       type: "video",
-      src: "/media/media-4.mp4",
+      src: "https://www.youtube.com/watch?v=mbwuj58UEPg&t=23s",
       thumbnail: "/media/4.png",
       alt: "Company Video",
       size: "large",
@@ -69,6 +69,16 @@ const OurMedia = () => {
   const handleMediaClick = (item: MediaItem) => {
     setSelectedMedia(item);
     setIsPlaying(item.type === "video");
+  };
+
+  // Convert YouTube URL to embed URL
+  const getYouTubeEmbedUrl = (url: string) => {
+    const videoId = url.match(
+      /(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\n?#]+)/
+    )?.[1];
+    return videoId
+      ? `https://www.youtube.com/embed/${videoId}?autoplay=1`
+      : url;
   };
 
   const handleClose = () => {
@@ -282,7 +292,7 @@ const OurMedia = () => {
                 >
                   {/* Close Button - Positioned relative to content */}
                   <motion.button
-                    className="absolute -top-5 right-[320px] z-10 w-12 h-12 bg-sky-500 hover:bg-sky-600 rounded-full flex items-center justify-center transition-colors shadow-2xl cursor-pointer"
+                    className="absolute -top-5 right-[3px] z-10 w-12 h-12 bg-sky-500 hover:bg-sky-600 rounded-full flex items-center justify-center transition-colors shadow-2xl cursor-pointer"
                     initial={{ opacity: 0, scale: 0.5 }}
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.5 }}
@@ -307,14 +317,18 @@ const OurMedia = () => {
                       />
                     </div>
                   ) : (
-                    <video
-                      src={selectedMedia.src}
-                      controls
-                      autoPlay={isPlaying}
-                      className="w-full max-h-[85vh] rounded-lg"
+                    <div
+                      className="relative w-full"
+                      style={{ paddingBottom: "56.25%" }}
                     >
-                      Your browser does not support the video tag.
-                    </video>
+                      <iframe
+                        src={getYouTubeEmbedUrl(selectedMedia.src)}
+                        title={selectedMedia.alt}
+                        className="absolute top-0 left-0 w-full h-full rounded-lg"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                      />
+                    </div>
                   )}
                 </motion.div>
               </motion.div>

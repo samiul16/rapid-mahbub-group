@@ -145,7 +145,7 @@ const OurBlog = () => {
               </motion.p>
               <motion.div whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
                 <Link
-                  href={`/blog/${featuredPost.slug}`}
+                  href="/blogs"
                   className="inline-block text-sky-500 hover:text-sky-600 font-medium transition-colors"
                 >
                   Read More
@@ -225,7 +225,7 @@ const OurBlog = () => {
                       transition={{ duration: 0.2 }}
                     >
                       <Link
-                        href={`/blog/${post.slug}`}
+                        href="/blogs"
                         className="text-sky-500 hover:text-sky-600 text-sm font-medium transition-colors"
                       >
                         Read More

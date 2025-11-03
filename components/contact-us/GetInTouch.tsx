@@ -82,8 +82,8 @@ export default function ContactFormSection() {
     {
       icon: Phone,
       title: "Phone",
-      content: "+966 50 517 6100",
-      link: "tel:+966505176100",
+      content: "+971 54 324 7559",
+      link: "tel:+971543247559",
     },
     {
       icon: Mail,
