@@ -52,7 +52,7 @@ export default function Footer() {
             {/* Social Media Icons */}
             <div className="flex items-center gap-2 pt-2">
               <Link
-                href="https://www.youtube.com/@arcoengineeringltd"
+                href="https://www.youtube.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-8 h-8 rounded flex items-center justify-center transition-colors"
@@ -70,7 +70,7 @@ export default function Footer() {
                 <Linkedin className="w-6 h-6 text-sky-500" />
               </Link> */}
               <Link
-                href="https://x.com/arcocompanyltd"
+                href="https://x.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-8 h-8 rounded flex items-center justify-center transition-colors"
@@ -79,7 +79,7 @@ export default function Footer() {
                 <Twitter className="w-6 h-6 text-sky-500" />
               </Link>
               <Link
-                href="https://www.instagram.com/arcoengineeringltd/"
+                href="https://www.instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-8 h-8  rounded flex items-center justify-center  transition-colors"
@@ -88,7 +88,7 @@ export default function Footer() {
                 <Instagram className="w-6 h-6 text-sky-500" />
               </Link>
               <Link
-                href="https://www.facebook.com/arcoengineeringltd"
+                href="https://www.facebook.com/Alburaqemb/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-8 h-8  rounded flex items-center justify-center transition-colors"
