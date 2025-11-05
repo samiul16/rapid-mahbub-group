@@ -91,19 +91,7 @@ const WorkSteps = () => {
   };
 
   return (
-    <div className="w-full py-16 relative overflow-hidden px-4 md:px-8 lg:px-16">
-      {/* Background Image - Fixed positioning issue */}
-      <div className="absolute inset-0 pointer-events-none">
-        <Image
-          src="/bg-our-team.png"
-          alt="Background"
-          fill
-          className="object-cover object-top" // Changed: Added object-top
-          quality={100}
-          priority
-        />
-      </div>
-
+    <div className="w-full py-16 relative overflow-hidden px-4 md:px-8 lg:px-16 bg-sky-800">
       {/* Section Header */}
       <div className="flex flex-col items-center justify-center gap-4 sm:gap-6 mb-12 px-4 relative z-10">
         <h2 className="text-3xl sm:text-4xl md:text-[40px] font-bold text-[#e9f5fb] text-center tracking-[-0.4px]">
@@ -170,7 +158,7 @@ const WorkSteps = () => {
                     src={member.image}
                     alt={member.name}
                     fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="object-cover transition-transform duration-500 group-hover:scale-110 shadow"
                   />
 
                   {/* Gradient Overlay - Shows on hover */}

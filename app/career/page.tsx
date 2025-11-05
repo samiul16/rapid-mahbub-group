@@ -155,7 +155,7 @@ const CareerPage = () => {
                       >
                         <Check className="w-4 h-4 text-white" />
                       </motion.div>
-                      <h3 className="text-xl sm:text-2xl font-medium text-cyan-800 leading-normal">
+                      <h3 className="text-xl sm:text-2xl font-medium text-sky-500/80 leading-normal">
                         {reason}
                       </h3>
                     </motion.div>

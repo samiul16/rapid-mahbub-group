@@ -21,13 +21,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative overflow-hidden">
-      {/* Background Image */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/footer/footer-bg.png')" }}
-      />
-
+    <footer className="relative overflow-hidden bg-sky-700">
       <div className="relative max-w-[1830px] mx-auto px-1 sm:px-2 lg:px-20 py-8">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 items-center">

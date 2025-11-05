@@ -1,5 +1,4 @@
 "use client";
-import { ChevronDown, Search } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState, useEffect, useRef } from "react";
@@ -105,23 +104,12 @@ const Navbar = () => {
 
   // Determine navbar background and text colors
   const getNavbarStyles = () => {
-    if (isHomePage) {
-      return {
-        navBg: isScrolled ? "bg-black/20 backdrop-blur-md" : "bg-transparent",
-        textColor: "text-white",
-        hoverColor: "hover:text-[#1a7ba8]",
-        activeColor: "text-sky-600 font-semibold",
-      };
-    } else {
-      return {
-        navBg: isScrolled ? "bg-white shadow-md" : "bg-white shadow-md",
-        textColor: isScrolled ? "text-blue-400" : "text-blue-400 ",
-        hoverColor: isScrolled ? "hover:text-sky-00" : "hover:text-sky-600",
-        activeColor: isScrolled
-          ? "text-sky-600 font-semibold"
-          : "text-sky-600 font-semibold",
-      };
-    }
+    return {
+      navBg: isScrolled ? "bg-black/20 backdrop-blur-md" : "bg-transparent",
+      textColor: "text-white",
+      hoverColor: "hover:text-[#1a7ba8]",
+      activeColor: "text-sky-600 font-semibold",
+    };
   };
 
   const styles = getNavbarStyles();
