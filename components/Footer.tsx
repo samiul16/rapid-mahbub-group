@@ -98,7 +98,7 @@ export default function Footer() {
             <h3 className="text-white text-2xl font-semibold mt-8 mb-4">
               Quick Links
             </h3>
-            <ul className="space-y-2 flex-grow">
+            <ul className="space-y-6 flex-grow">
               <li>
                 <Link
                   href="/about-us"
@@ -108,15 +108,7 @@ export default function Footer() {
                   About
                 </Link>
               </li>
-              <li>
-                <Link
-                  href="/media"
-                  className="flex items-center gap-2 text-white text-lg hover:text-sky-300 transition-colors"
-                >
-                  <ChevronRight className="w-3 h-3 flex-shrink-0" />
-                  Media
-                </Link>
-              </li>
+
               <li>
                 <Link
                   href="/career"
@@ -143,7 +135,7 @@ export default function Footer() {
             <h3 className="text-white text-2xl font-semibold mt-8 mb-4">
               Resources
             </h3>
-            <ul className="space-y-2 flex-grow">
+            <ul className="space-y-6 flex-grow">
               {/* <li>
                 <Link
                   href="/enquiry"
@@ -178,6 +170,15 @@ export default function Footer() {
                 >
                   <ChevronRight className="w-3 h-3 flex-shrink-0" />
                   Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/media"
+                  className="flex items-center gap-2 text-white text-lg hover:text-sky-300 transition-colors"
+                >
+                  <ChevronRight className="w-3 h-3 flex-shrink-0" />
+                  Media
                 </Link>
               </li>
             </ul>

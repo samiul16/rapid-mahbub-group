@@ -258,7 +258,7 @@ const ClientTestimonials = () => {
         {/* Carousel Indicators */}
         <div className="flex justify-center mt-8 gap-3">
           {Array.from({
-            length: Math.max(1, testimonialsData.length - cardsPerView + 1),
+            length: Math.max(1, 5),
           }).map((_, index) => (
             <button
               key={index}

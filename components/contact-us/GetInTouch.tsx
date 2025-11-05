@@ -323,7 +323,7 @@ export default function ContactFormSection() {
                 disabled={isSubmitting}
                 whileHover={{ scale: isSubmitting ? 1 : 1.05 }}
                 whileTap={{ scale: isSubmitting ? 1 : 0.95 }}
-                className="px-8 py-4 bg-sky-500 hover:bg-sky-600 disabled:bg-sky-300 rounded-[30px] text-white text-xl font-bold uppercase tracking-wide transition-colors flex items-center justify-center gap-2 disabled:cursor-not-allowed mt-6"
+                className="px-8 py-4 bg-sky-500 hover:bg-sky-600 disabled:bg-sky-300 rounded-[30px] text-white text-xl font-bold uppercase tracking-wide transition-colors flex items-center justify-center gap-2 disabled:cursor-not-allowed mt-6 cursor-pointer"
               >
                 {isSubmitting ? (
                   <>

@@ -120,7 +120,7 @@ const Navbar = () => {
       style={{ zIndex: 9998 }}
     >
       <div className="max-w-[1700px] mx-auto px-4 sm:px-6 2xl:px-8">
-        <div className="flex items-center justify-between h-16 sm:h-20">
+        <div className="flex items-center justify-between h-16 sm:h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/">
@@ -129,7 +129,7 @@ const Navbar = () => {
                 alt="Company Logo"
                 width={160}
                 height={60}
-                className="h-20 w-auto"
+                className="h-16 w-auto"
               />
             </Link>
           </div>
@@ -145,7 +145,7 @@ const Navbar = () => {
                     : styles.textColor
                 } ${
                   styles.hoverColor
-                } group-hover:text-sky-500 font-medium transition-colors text-lg font-anek`}
+                } group-hover:text-sky-500 font-medium transition-colors text-lg font-anek uppercase`}
               >
                 Divisions
               </Link>
@@ -157,7 +157,7 @@ const Navbar = () => {
                     : styles.textColor
                 } ${
                   styles.hoverColor
-                } group-hover:text-sky-500 font-medium transition-colors text-lg font-anek`}
+                } group-hover:text-sky-500 font-medium transition-colors text-lg font-anek uppercase`}
               >
                 About
               </Link>
@@ -167,7 +167,7 @@ const Navbar = () => {
                   pathname === "/media" ? styles.activeColor : styles.textColor
                 } ${
                   styles.hoverColor
-                } group-hover:text-sky-500 font-medium transition-colors text-lg font-anek`}
+                } group-hover:text-sky-500 font-medium transition-colors text-lg font-anek uppercase`}
               >
                 Media
               </Link>
@@ -177,7 +177,7 @@ const Navbar = () => {
                   pathname === "/career" ? styles.activeColor : styles.textColor
                 } ${
                   styles.hoverColor
-                } group-hover:text-sky-500 font-medium transition-colors text-lg font-anek`}
+                } group-hover:text-sky-500 font-medium transition-colors text-lg font-anek uppercase`}
               >
                 Career
               </Link>
@@ -189,7 +189,7 @@ const Navbar = () => {
                     : styles.textColor
                 } ${
                   styles.hoverColor
-                } group-hover:text-sky-500 font-medium transition-colors text-lg font-anek`}
+                } group-hover:text-sky-500 font-medium transition-colors text-lg font-anek uppercase`}
               >
                 Contact
               </Link>
