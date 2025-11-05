@@ -58,6 +58,7 @@ const JobApplicationPage = () => {
     cv: null,
   });
 
+  const [focusedField, setFocusedField] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<{
     type: "success" | "error" | null;
@@ -568,71 +569,103 @@ const JobApplicationPage = () => {
 
                 <form onSubmit={handleSubmit} className="space-y-5">
                   {/* Full Name */}
-                  <div>
-                    <label className="block text-sm font-semibold text-cyan-800 mb-2">
-                      Full Name *
-                    </label>
+                  <div className="relative">
                     <input
                       type="text"
                       name="fullName"
                       value={formData.fullName}
                       onChange={handleInputChange}
+                      onFocus={() => setFocusedField("fullName")}
+                      onBlur={() => setFocusedField(null)}
+                      placeholder=" "
                       required
                       disabled={isSubmitting}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent disabled:bg-gray-100 disabled:cursor-not-allowed transition-all text-gray-700"
-                      placeholder="John Doe"
+                      className="w-full px-4 py-3 bg-white rounded-lg border border-gray-300 text-gray-900 text-base font-normal focus:outline-none focus:border-sky-500 transition-all peer placeholder-transparent disabled:opacity-50 disabled:cursor-not-allowed"
                     />
+                    <label
+                      className={`absolute left-3 top-0 bg-white px-1 transition-all duration-200 pointer-events-none ${
+                        formData.fullName || focusedField === "fullName"
+                          ? "-translate-y-1/2 text-xs text-sky-500"
+                          : "translate-y-3 text-base text-gray-500"
+                      }`}
+                    >
+                      Full Name *
+                    </label>
                   </div>
 
                   {/* Email */}
-                  <div>
-                    <label className="block text-sm font-semibold text-cyan-800 mb-2">
-                      Email Address *
-                    </label>
+                  <div className="relative">
                     <input
                       type="email"
                       name="email"
                       value={formData.email}
                       onChange={handleInputChange}
+                      onFocus={() => setFocusedField("email")}
+                      onBlur={() => setFocusedField(null)}
+                      placeholder=" "
                       required
                       disabled={isSubmitting}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent disabled:bg-gray-100 disabled:cursor-not-allowed transition-all text-gray-700"
-                      placeholder="john@example.com"
+                      className="w-full px-4 py-3 bg-white rounded-lg border border-gray-300 text-gray-900 text-base font-normal focus:outline-none focus:border-sky-500 transition-all peer placeholder-transparent disabled:opacity-50 disabled:cursor-not-allowed"
                     />
+                    <label
+                      className={`absolute left-3 top-0 bg-white px-1 transition-all duration-200 pointer-events-none ${
+                        formData.email || focusedField === "email"
+                          ? "-translate-y-1/2 text-xs text-sky-500"
+                          : "translate-y-3 text-base text-gray-500"
+                      }`}
+                    >
+                      Email Address *
+                    </label>
                   </div>
 
                   {/* Phone */}
-                  <div>
-                    <label className="block text-sm font-semibold text-cyan-800 mb-2">
-                      Phone Number *
-                    </label>
+                  <div className="relative">
                     <input
                       type="tel"
                       name="phone"
                       value={formData.phone}
                       onChange={handleInputChange}
+                      onFocus={() => setFocusedField("phone")}
+                      onBlur={() => setFocusedField(null)}
+                      placeholder=" "
                       required
                       disabled={isSubmitting}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent disabled:bg-gray-100 disabled:cursor-not-allowed transition-all text-gray-700"
-                      placeholder="+880 1XXX-XXXXXX"
+                      className="w-full px-4 py-3 bg-white rounded-lg border border-gray-300 text-gray-900 text-base font-normal focus:outline-none focus:border-sky-500 transition-all peer placeholder-transparent disabled:opacity-50 disabled:cursor-not-allowed"
                     />
+                    <label
+                      className={`absolute left-3 top-0 bg-white px-1 transition-all duration-200 pointer-events-none ${
+                        formData.phone || focusedField === "phone"
+                          ? "-translate-y-1/2 text-xs text-sky-500"
+                          : "translate-y-3 text-base text-gray-500"
+                      }`}
+                    >
+                      Phone Number *
+                    </label>
                   </div>
 
                   {/* Years of Experience */}
-                  <div>
-                    <label className="block text-sm font-semibold text-cyan-800 mb-2">
-                      Years of Experience *
-                    </label>
+                  <div className="relative">
                     <input
                       type="text"
                       name="experience"
                       value={formData.experience}
                       onChange={handleInputChange}
+                      onFocus={() => setFocusedField("experience")}
+                      onBlur={() => setFocusedField(null)}
+                      placeholder=" "
                       required
                       disabled={isSubmitting}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent disabled:bg-gray-100 disabled:cursor-not-allowed transition-all text-gray-700"
-                      placeholder="e.g., 5 years"
+                      className="w-full px-4 py-3 bg-white rounded-lg border border-gray-300 text-gray-900 text-base font-normal focus:outline-none focus:border-sky-500 transition-all peer placeholder-transparent disabled:opacity-50 disabled:cursor-not-allowed"
                     />
+                    <label
+                      className={`absolute left-3 top-0 bg-white px-1 transition-all duration-200 pointer-events-none ${
+                        formData.experience || focusedField === "experience"
+                          ? "-translate-y-1/2 text-xs text-sky-500"
+                          : "translate-y-3 text-base text-gray-500"
+                      }`}
+                    >
+                      Years of Experience *
+                    </label>
                   </div>
 
                   {/* CV Upload */}
@@ -689,19 +722,27 @@ const JobApplicationPage = () => {
                   </div>
 
                   {/* Cover Letter */}
-                  <div>
-                    <label className="block text-sm font-semibold text-cyan-800 mb-2">
-                      Cover Letter (Optional)
-                    </label>
+                  <div className="relative">
                     <textarea
                       name="coverLetter"
                       value={formData.coverLetter}
                       onChange={handleInputChange}
+                      onFocus={() => setFocusedField("coverLetter")}
+                      onBlur={() => setFocusedField(null)}
+                      placeholder=" "
                       rows={4}
                       disabled={isSubmitting}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent resize-none disabled:bg-gray-100 text-gray-700  disabled:cursor-not-allowed transition-all"
-                      placeholder="Tell us why you're a great fit for this position..."
+                      className="w-full px-4 py-3 bg-white rounded-lg border border-gray-300 text-gray-900 text-base font-normal focus:outline-none focus:border-sky-500 transition-all peer placeholder-transparent resize-none disabled:opacity-50 disabled:cursor-not-allowed"
                     />
+                    <label
+                      className={`absolute left-3 top-0 bg-white px-1 transition-all duration-200 pointer-events-none ${
+                        formData.coverLetter || focusedField === "coverLetter"
+                          ? "-translate-y-1/2 text-xs text-sky-500"
+                          : "translate-y-3 text-base text-gray-500"
+                      }`}
+                    >
+                      Cover Letter (Optional)
+                    </label>
                   </div>
 
                   {/* Submit Button */}
