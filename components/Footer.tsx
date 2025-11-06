@@ -189,7 +189,7 @@ export default function Footer() {
             <h3 className="text-white text-2xl font-semibold mt-8 mb-4">
               Divisions
             </h3>
-            <ul className="space-y-2 flex-grow">
+            <ul className="space-y-6 flex-grow ">
               <li>
                 <Link
                   href="/divisions"
@@ -215,15 +215,6 @@ export default function Footer() {
                 >
                   <ChevronRight className="w-3 h-3 flex-shrink-0" />
                   General Trading
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/divisions"
-                  className="flex items-center gap-2 text-white text-lg hover:text-sky-300 transition-colors"
-                >
-                  <ChevronRight className="w-3 h-3 flex-shrink-0" />
-                  Manpower Supply
                 </Link>
               </li>
             </ul>
