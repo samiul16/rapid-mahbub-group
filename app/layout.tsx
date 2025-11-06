@@ -13,7 +13,7 @@ const notoSans = Noto_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Your Company Name",
+  title: "Mahbub Group",
   description: "Professional services and solutions",
 };
 
