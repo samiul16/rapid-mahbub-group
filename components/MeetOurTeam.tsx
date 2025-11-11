@@ -175,7 +175,7 @@ const WorkSteps = () => {
                       .map((member, index) => (
                         <div
                           key={`${slideIndex}-${index}`}
-                          className="flex flex-col gap-4 w-full max-w-[380px] group"
+                          className="flex flex-col gap-4 w-full group"
                         >
                           <div className="w-full aspect-[380/420] relative overflow-hidden rounded-lg shadow">
                             <Image
