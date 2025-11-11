@@ -9,7 +9,7 @@ import Subscribe from "@/components/Subscribe";
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-
+import MeetOurTeam from "@/components/MeetOurTeam";
 
 export default function Home() {
   // Initialize AOS
@@ -36,6 +36,9 @@ export default function Home() {
         </div>
         <div data-aos="fade-up" data-aos-delay="400">
           <Subscribe />
+        </div>
+        <div data-aos="fade-up" data-aos-delay="500">
+          <MeetOurTeam />
         </div>
         <div data-aos="fade-up" data-aos-delay="500">
           <ClientTestimonials />

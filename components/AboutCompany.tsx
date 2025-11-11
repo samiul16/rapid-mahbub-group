@@ -93,11 +93,15 @@ const CompanySections = () => {
           }`}
         >
           <div className="max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-24">
-            <div className="flex flex-col lg:flex-row justify-between items-center gap-8 lg:gap-12">
-              {/* Left Side - Image */}
+            <div
+              className={`flex flex-col lg:flex-row justify-between items-center gap-8 lg:gap-12 ${
+                index % 2 === 1 ? "lg:flex-row-reverse" : ""
+              }`}
+            >
+              {/* Image */}
               <motion.div
-                className="w-full lg:w-[737px] h-[300px] sm:h-[400px] lg:h-[479px] relative"
-                initial={{ opacity: 0, x: -50 }}
+                className="w-full lg:w-[737px] h-[300px] sm:h-[400px] lg:h-[579px] relative"
+                initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.6 }}
@@ -116,17 +120,17 @@ const CompanySections = () => {
                 </motion.div>
               </motion.div>
 
-              {/* Right Side - Content */}
+              {/* Content */}
               <motion.div
                 className="w-full lg:w-[837px] flex flex-col justify-start items-start gap-6"
-                initial={{ opacity: 0, x: 50 }}
+                initial={{ opacity: 0, x: index % 2 === 0 ? 50 : -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
                 {/* Title */}
                 <motion.h2
-                  className="text-3xl sm:text-4xl font-bold text-sky-500 tracking-wide"
+                  className="text-3xl sm:text-4xl font-bold text-sky-500 tracking-wide text-shadow-md"
                   initial={{ opacity: 0, y: -20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -169,7 +173,7 @@ const CompanySections = () => {
 
                   {/* Explore More Button */}
                   <motion.button
-                    className="inline-flex items-center gap-2 text-sky-500 hover:text-sky-600 text-lg sm:text-xl font-semibold leading-8 group cursor-pointer mt-2"
+                    className="inline-flex items-center gap-2 bg-sky-500 hover:bg-sky-600 text-white text-lg sm:text-xl font-semibold leading-8 group cursor-pointer mt-2 px-6 py-3 rounded-full transition-colors duration-300 w-fit shadow"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}

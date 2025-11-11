@@ -61,7 +61,7 @@ const OurBlog = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-sky-500 mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-sky-500 mb-4 text-shadow-lg">
             Our Blog
           </h2>
         </motion.div>
@@ -148,7 +148,7 @@ const OurBlog = () => {
               <motion.div whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
                 <Link
                   href="/blogs"
-                  className="inline-block text-sky-500 hover:text-sky-600 font-medium transition-colors"
+                  className="inline-flex items-center gap-2 bg-sky-500 hover:bg-sky-600 text-white font-semibold px-6 py-3 rounded-full transition-colors duration-300 w-fit shadow"
                 >
                   Read More
                 </Link>
@@ -228,7 +228,7 @@ const OurBlog = () => {
                     >
                       <Link
                         href="/blogs"
-                        className="text-sky-500 hover:text-sky-600 text-sm font-medium transition-colors"
+                        className="inline-flex items-center gap-2 bg-sky-500 hover:bg-sky-600 text-white text-sm font-semibold px-4 py-2 rounded-full transition-colors duration-300 w-fit shadow"
                       >
                         Read More
                       </Link>
