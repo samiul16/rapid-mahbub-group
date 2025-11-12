@@ -77,9 +77,11 @@ export default function RootLayout({
             },
           }}
         />
-        <Navbar />
-        {children}
-        <Footer />
+        <div className = "overflow-x-hidden">
+          <Navbar />
+          {children}
+          <Footer />
+        </div>
 
         {/* Global WhatsApp Button - Bottom Right */}
         <div className="fixed bottom-6 right-6 z-50">

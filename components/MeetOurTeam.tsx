@@ -18,44 +18,29 @@ const WorkSteps = () => {
 
   const teamMembers = [
     {
-      name: "MD Salman",
+      name: "Yousuf Noor",
       position: "Senior Engineer",
-      image: "/team-members/1.jpg",
+      image: "/team-members/1.jpeg",
     },
     {
-      name: "Mr. Fung Su Lee",
+      name: "Mohammed Noor",
       position: "Architect Engineer",
-      image: "/team-members/2.jpg",
+      image: "/team-members/2.jpeg",
     },
     {
-      name: "Robert Bruce",
+      name: "Ismail Noor",
       position: "Lead Site Engineer",
-      image: "/team-members/3.jpg",
+      image: "/team-members/3.jpeg",
     },
     {
-      name: "Sarah Johnson",
+      name: "Mohammed Noor",
       position: "Project Manager",
-      image: "/team-members/2.jpg",
+      image: "/team-members/2.jpeg",
     },
     {
-      name: "Michael Chen",
+      name: "Ismail Noor",
       position: "Construction Lead",
-      image: "/team-members/1.jpg",
-    },
-    {
-      name: "Mr. Fung Su Lee",
-      position: "Architect Engineer",
-      image: "/team-members/2.jpg",
-    },
-    {
-      name: "Robert Bruce",
-      position: "Lead Site Engineer",
-      image: "/team-members/3.jpg",
-    },
-    {
-      name: "Sarah Johnson",
-      position: "Project Manager",
-      image: "/team-members/2.jpg",
+      image: "/team-members/1.jpeg",
     },
   ];
 

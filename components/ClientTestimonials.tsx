@@ -34,7 +34,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ testimonial }) => {
         <div className="absolute inset-0 z-10 bg-gradient-to-l from-sky-600/10 to-sky-600/80" />
 
         {/* Content */}
-        <div className="absolute inset-0 z-20 p-6 flex flex-col justify-center">
+        <div className="absolute inset-0 z-20 p-6 flex flex-col justify-end">
           <div className="flex justify-between items-start mb-4">
             <h3 className="text-xl mt-4 font-medium text-[#E9F5FB]">
               {testimonial.title}
@@ -52,7 +52,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ testimonial }) => {
             {testimonial.testimonial}
           </p>
 
-          <div className="flex items-center mt-auto">
+          <div className="flex items-center">
             <div className="w-5 h-[1px] bg-white"></div>
             <span className="ml-2 text-white opacity-90 text-sm">
               {testimonial.name}
@@ -89,49 +89,49 @@ const ClientTestimonials = () => {
   const testimonialsData: TestimonialData[] = [
     {
       id: 1,
-      name: "Sarah Jenkins",
+      name: "Yousuf Noor",
       title: "",
-      image: "/client/1.jpg",
+      image: "/clientt/1.jpeg",
       testimonial:
         "Excellency General Trading manages our global commodity supply chain with remarkable efficiency. Their proactive communication and flawless documentation make them a truly trusted, strategic logistics partner. On-time delivery with zero compromise on quality standards.",
     },
     {
       id: 2,
-      name: "Omar Al-Farsi",
+      name: "Stella Smith, New York",
       title: "",
-      image: "/client/2.jpg",
+      image: "/clientt/2.jpeg",
       testimonial:
         "The Mahbub Group's construction team delivered our new corporate headquarters ahead of schedule, exceeding our quality expectations. Their project management was professional, highly transparent, and they maintained exceptional health and safety standards throughout the entire build.",
     },
     {
       id: 3,
-      name: " David Miah",
+      name: "Abdur Gaffar, Dubai",
       title: "",
-      image: "/client/3.jpg",
+      image: "/clientt/3.jpeg",
       testimonial:
         "Switching to Mahbub Group’s feed products gave us the consistency and quality we needed. We've seen measurable improvements in our livestock productivity, thanks to their valuable nutritional consultation and technical support. It's a truly supportive partnership.",
     },
     {
       id: 4,
-      name: "Soniya Blade",
+      name: "Muhammad Salim, Dubai",
       title: "",
-      image: "/client/1.jpg",
+      image: "/clientt/5.jpeg",
       testimonial:
         "Exceptional service quality and an impressive fleet of vehicles. The booking process is straightforward, and the customer service team is always available to help. Will definitely use their services again.",
     },
     {
       id: 5,
-      name: "Uluku Davis",
+      name: "Yousuf Noor, Dubai",
       title: "",
-      image: "/client/2.jpg",
+      image: "/clientt/4.jpeg",
       testimonial:
         "As a frequent business traveler, I need reliable transportation. This service has never let me down. Professional drivers, clean vehicles, and always on time. Perfect for corporate needs.",
     },
     {
       id: 6,
-      name: "James Wilson",
+      name: "Milon Islam, Dubai",
       title: "",
-      image: "/client/3.jpg",
+      image: "/clientt/3.jpeg",
       testimonial:
         "Great selection of luxury vehicles at competitive prices. The staff is knowledgeable and helpful in choosing the right car for your needs. The entire experience from booking to return is smooth and professional.",
     },

@@ -20,7 +20,7 @@
 }
 
 body {
-  background: var(--background);
+  background: #fff;
   color: var(--foreground);
   font-family: "Noto Sans", var(--font-noto-sans), sans-serif !important;
   overflow-x: hidden !important;
