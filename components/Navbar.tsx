@@ -116,7 +116,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 transition-all duration-300 py-3 ${styles.navBg} hover:bg-white group`}
+      className={`fixed top-0 left-0 right-0 transition-all duration-300 py-3 ${styles.navBg} hover:bg-white group overflow-hidden`}
       style={{ zIndex: 9998 }}
     >
       <div className="max-w-[1700px] mx-auto px-4 sm:px-6 2xl:px-8">

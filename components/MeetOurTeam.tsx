@@ -104,7 +104,7 @@ const WorkSteps = () => {
     <div className="w-full py-16 relative overflow-hidden px-4 md:px-8 lg:px-16 bg-sky-800 my-10">
       {/* Section Header */}
       <div className="flex flex-col items-center justify-center gap-4 sm:gap-6 mb-12 px-4 relative z-10">
-        <h2 className="text-3xl sm:text-4xl md:text-[40px] font-bold text-[#e9f5fb] text-center tracking-[-0.4px]">
+        <h2 className="text-34xl sm:text-4xl md:text-5xl font-bold text-[#e9f5fb] text-center tracking-[-0.4px]">
           Meet Our Team
         </h2>
         <p className="text-base sm:text-lg md:text-xl text-[#e9f5fb] text-center max-w-[540px]">

@@ -24,24 +24,24 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white overflow-x-hidden!">
+    <div className="min-h-screen bg-white overflow-x-hidden">
       <main>
         <HeroSection />
 
         <div data-aos="fade-up" data-aos-delay="200">
           <AboutCompany />
         </div>
-        <div data-aos="fade-up" data-aos-delay="300">
-          <OurBlog />
-        </div>
-        <div data-aos="fade-up" data-aos-delay="400">
-          <Subscribe />
-        </div>
         <div data-aos="fade-up" data-aos-delay="500">
           <MeetOurTeam />
         </div>
         <div data-aos="fade-up" data-aos-delay="500">
           <ClientTestimonials />
+        </div>
+        <div data-aos="fade-up" data-aos-delay="300">
+          <OurBlog />
+        </div>
+        <div data-aos="fade-up" data-aos-delay="400">
+          <Subscribe />
         </div>
       </main>
     </div>
