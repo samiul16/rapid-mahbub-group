@@ -120,7 +120,7 @@ export async function POST(request: NextRequest) {
           <div class="container">
             <div class="header">
               <h1>New Manpower Request</h1>
-              <p style="margin: 5px 0 0 0; font-size: 14px;">RM Orient Engineering Limited - Man Power Application</p>
+              <p style="margin: 5px 0 0 0; font-size: 14px;">RM Orient Limited - Man Power Application</p>
             </div>
             <div class="content">
               <div class="project-title">
