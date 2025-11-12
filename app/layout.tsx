@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={notoSans.variable}>
       <body
-        className={`${notoSans.className} antialiased bg-white overflow-x-hidden`}
+        className={`${notoSans.className} antialiased bg-white overflow-x-hidden!`}
       >
         {/* Global Toast Notifications */}
         <Toaster

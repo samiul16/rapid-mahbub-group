@@ -40,7 +40,7 @@ const Subscribe = () => {
           <div className="w-full sm:w-auto flex-shrink-0">
             <form
               onSubmit={handleSubmit}
-              className="flex flex-col sm:flex-row gap-3 sm:gap-2"
+              className="flex flex-col sm:flex-row gap-3 sm:gap-0 sm:relative"
             >
               <input
                 type="email"
@@ -48,11 +48,11 @@ const Subscribe = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter Email"
                 required
-                className="px-5 py-4 rounded-full bg-white text-gray-700 placeholder-gray-500 border-none outline-none focus:ring-2 focus:ring-white/50 w-full sm:w-64 lg:w-96"
+                className="px-5 py-4 sm:pr-32 rounded-full bg-white text-gray-700 placeholder-gray-500 border-none outline-none focus:ring-2 focus:ring-white/50 w-full sm:w-64 lg:w-96"
               />
               <button
                 type="submit"
-                className="bg-sky-500 hover:bg-sky-600 text-white font-semibold px-6 py-4 rounded-full transition-colors duration-200 whitespace-nowrap -ml-20 shadow cursor-pointer"
+                className="bg-sky-500 hover:bg-sky-600 text-white font-semibold px-6 py-4 rounded-full transition-colors duration-200 whitespace-nowrap sm:absolute sm:right-1 sm:top-1 sm:bottom-1 shadow cursor-pointer"
               >
                 Subscribe
               </button>

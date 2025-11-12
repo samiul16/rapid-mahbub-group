@@ -89,7 +89,7 @@ const ClientTestimonials = () => {
   const testimonialsData: TestimonialData[] = [
     {
       id: 1,
-      name: "Omar Al-Farsi,",
+      name: "Sarah Jenkins",
       title: "",
       image: "/client/1.jpg",
       testimonial:
@@ -97,7 +97,7 @@ const ClientTestimonials = () => {
     },
     {
       id: 2,
-      name: "Sarah Jenkins",
+      name: "Omar Al-Farsi",
       title: "",
       image: "/client/2.jpg",
       testimonial:
@@ -113,7 +113,7 @@ const ClientTestimonials = () => {
     },
     {
       id: 4,
-      name: "David Brown",
+      name: "Soniya Blade",
       title: "",
       image: "/client/1.jpg",
       testimonial:
@@ -121,7 +121,7 @@ const ClientTestimonials = () => {
     },
     {
       id: 5,
-      name: "Emma Davis",
+      name: "Uluku Davis",
       title: "",
       image: "/client/2.jpg",
       testimonial:
