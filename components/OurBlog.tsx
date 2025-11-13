@@ -25,7 +25,7 @@ const OurBlog = () => {
         "Why the Future of Property Lies in Smart, Sustainable Infrastructure?",
       excerpt:
         "The future isn't just being dreamed up—it's being built, brick by ethical brick. Explore how the Mahbub Group is using advanced, eco-friendly technology to construct modern infrastructure.",
-      image: "/bc.jpg",
+      image: "/blogs/mahbub-blog-2.jpg",
       date: "September 26, 2024",
       slug: "exploring-art-construction-1",
     },
@@ -35,7 +35,7 @@ const OurBlog = () => {
         "Beyond the Plate: The Art of Crafting a Memorable Dining Experience",
       excerpt:
         " What turns a meal into a memorable moment? It's more than just the food on your plate. Learn how Excellency Restaurants blends culinary creativity, culture, and care to set a new standard for hospitality.",
-      image: "/bc.jpg",
+      image: "/blogs/mahbub-blog-3.jpg",
       date: "September 26, 2024",
       slug: "exploring-art-construction-2",
     },
