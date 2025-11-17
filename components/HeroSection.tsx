@@ -105,7 +105,7 @@ const HeroSection = () => {
                 ? "brightness(0.8) contrast(1.05)"
                 : "brightness(0.8) blur(2px)",
             transition:
-              "all 800ms cubic-bezier(0.4, 0, 0.2, 1), filter 600ms ease-out",
+              "all 800ms cubic-bezier(0.4, 0, 0.2, 1), filter 800ms ease-out",
           }}
         >
           {/* Sky Gradient Overlay */}

@@ -3,7 +3,14 @@
 import React from "react";
 import Image from "next/image";
 import { motion, Variants } from "framer-motion";
-import { Facebook, Twitter, Linkedin, Share2 } from "lucide-react";
+import {
+  Facebook,
+  Twitter,
+  Linkedin,
+  Share2,
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
 import Header from "./Header";
 
 const BlogPage = () => {
@@ -73,6 +80,9 @@ const BlogPage = () => {
       slug: "skilled-labour-supply-importance",
     },
   ];
+
+  const currentPage = 1;
+  const totalPages = 3;
 
   // Animation variants
   const containerVariants: Variants = {
@@ -214,43 +224,76 @@ const BlogPage = () => {
             ))}
           </motion.div>
 
-          {/* Pagination */}
+          {/* Enhanced Pagination Section */}
           <motion.div
-            className="flex justify-center items-center gap-2 mt-12"
-            initial={{ opacity: 0, y: 20 }}
+            className="mt-16 flex justify-center items-center"
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.5, duration: 0.6 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
           >
-            <motion.button
-              className="px-4 py-2 rounded-lg bg-sky-500 text-white font-medium"
-              whileHover={{ scale: 1.05, backgroundColor: "#0284c7" }}
-              whileTap={{ scale: 0.95 }}
-            >
-              1
-            </motion.button>
-            <motion.button
-              className="px-4 py-2 rounded-lg border border-sky-500 text-sky-500 font-medium"
-              whileHover={{
-                scale: 1.05,
-                backgroundColor: "#0ea5e9",
-                color: "#ffffff",
-              }}
-              whileTap={{ scale: 0.95 }}
-            >
-              2
-            </motion.button>
-            <motion.button
-              className="px-4 py-2 rounded-lg border border-sky-500 text-sky-500 font-medium"
-              whileHover={{
-                scale: 1.05,
-                backgroundColor: "#0ea5e9",
-                color: "#ffffff",
-              }}
-              whileTap={{ scale: 0.95 }}
-            >
-              3
-            </motion.button>
+            <div className="flex items-center gap-2">
+              {/* Previous Button - Disabled */}
+              <motion.button
+                className="flex items-center justify-center w-10 h-10 rounded-lg border border-gray-200 text-gray-400 cursor-not-allowed"
+                disabled
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: 0.1 }}
+              >
+                <ChevronLeft className="w-5 h-5" />
+              </motion.button>
+
+              {/* Page Numbers */}
+              {[1, 2, 3].map((page, index) => (
+                <motion.button
+                  key={page}
+                  className={`flex items-center justify-center w-10 h-10 rounded-lg font-medium transition-all duration-300 ${
+                    page === currentPage
+                      ? "bg-sky-500 text-white shadow-lg"
+                      : page === 1
+                      ? "border border-gray-200 text-gray-700 hover:bg-gray-50"
+                      : "border border-gray-200 text-gray-400 cursor-not-allowed opacity-50"
+                  }`}
+                  disabled={page !== 1}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: 0.2 + index * 0.1 }}
+                  whileHover={
+                    page === 1
+                      ? {
+                          scale: 1.05,
+                          transition: { duration: 0.2 },
+                        }
+                      : {}
+                  }
+                  whileTap={
+                    page === 1
+                      ? {
+                          scale: 0.95,
+                          transition: { duration: 0.1 },
+                        }
+                      : {}
+                  }
+                >
+                  {page}
+                </motion.button>
+              ))}
+
+              {/* Next Button - Disabled */}
+              <motion.button
+                className="flex items-center justify-center w-10 h-10 rounded-lg border border-gray-200 text-gray-400 cursor-not-allowed"
+                disabled
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: 0.5 }}
+              >
+                <ChevronRight className="w-5 h-5" />
+              </motion.button>
+            </div>
           </motion.div>
         </div>
       </div>

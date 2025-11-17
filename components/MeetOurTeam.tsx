@@ -23,7 +23,7 @@ const WorkSteps = () => {
       image: "/team-members/1.jpeg",
     },
     {
-      name: "Mohammed Noor",
+      name: "Abdulrahman Wasil",
       position: "Architect Engineer",
       image: "/team-members/2.jpeg",
     },
@@ -33,14 +33,14 @@ const WorkSteps = () => {
       image: "/team-members/3.jpeg",
     },
     {
-      name: "Mohammed Noor",
+      name: "Abdullah Wahab",
       position: "Project Manager",
-      image: "/team-members/2.jpeg",
+      image: "/team-members/4.png",
     },
     {
-      name: "Ismail Noor",
+      name: "Abdulrahman Noor",
       position: "Construction Lead",
-      image: "/team-members/1.jpeg",
+      image: "/team-members/5.jpg",
     },
   ];
 
