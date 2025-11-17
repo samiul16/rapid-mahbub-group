@@ -24,6 +24,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={notoSans.variable}>
+      <head>
+        <link rel="icon" href="/logoo.png" sizes="any" />
+        <link rel="icon" href="/logoo.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/logoo.png" />
+      </head>
       <body
         className={`${notoSans.className} antialiased bg-white overflow-x-hidden!`}
       >
@@ -77,7 +82,7 @@ export default function RootLayout({
             },
           }}
         />
-        <div className = "overflow-x-hidden">
+        <div className="overflow-x-hidden">
           <Navbar />
           {children}
           <Footer />
