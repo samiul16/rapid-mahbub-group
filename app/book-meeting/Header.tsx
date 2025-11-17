@@ -68,7 +68,7 @@ const Header = () => {
                 delay: 0.6,
                 ease: [0.25, 0.1, 0.25, 1],
               }}
-              className="text-3xl sm:text-4xl md:text-[48px] font-bold font-[Anek_Malayalam] text-white text-center tracking-[-0.4px]"
+              className="text-3xl sm:text-4xl md:text-[48px] font-bold text-white text-center tracking-[-0.4px]"
             >
               Book a Meeting
             </motion.h1>

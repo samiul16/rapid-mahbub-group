@@ -7,7 +7,7 @@ const StatsSection = () => {
   const stats = [
     {
       id: 1,
-      number: "34",
+      number: "32",
       suffix: "+",
       label: "Growing Years",
     },

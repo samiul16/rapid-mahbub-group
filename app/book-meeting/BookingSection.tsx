@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { Send, CheckCircle, AlertCircle } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import toast from "react-hot-toast";
 
 const GetInTouch = () => {
   const [formData, setFormData] = useState({
@@ -16,6 +15,7 @@ const GetInTouch = () => {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [focusedField, setFocusedField] = useState<string | null>(null);
   const [submitStatus, setSubmitStatus] = useState<{
     type: "success" | "error" | null;
     message: string;
@@ -48,22 +48,11 @@ const GetInTouch = () => {
       const data = await response.json();
 
       if (response.ok) {
-        toast.success(
-          "Thank you! Your message has been sent successfully. We'll get back to you soon.",
-          {
-            duration: 5000,
-            style: {
-              background: "#10b981",
-              color: "#fff",
-              padding: "16px",
-              borderRadius: "8px",
-            },
-            iconTheme: {
-              primary: "#fff",
-              secondary: "#10b981",
-            },
-          }
-        );
+        setSubmitStatus({
+          type: "success",
+          message:
+            "Thank you! Your message has been sent successfully. We'll get back to you soon.",
+        });
         // Reset form
         setFormData({
           fullName: "",
@@ -78,34 +67,16 @@ const GetInTouch = () => {
           setSubmitStatus({ type: null, message: "" });
         }, 5000);
       } else {
-        toast.error(data.error || "Failed to send message. Please try again.", {
-          duration: 4000,
-          style: {
-            background: "#ef4444",
-            color: "#fff",
-            padding: "16px",
-            borderRadius: "8px",
-          },
-          iconTheme: {
-            primary: "#fff",
-            secondary: "#ef4444",
-          },
+        setSubmitStatus({
+          type: "error",
+          message: data.error || "Failed to send message. Please try again.",
         });
       }
     } catch (error) {
       console.error("Error submitting form:", error);
-      toast.error("An error occurred. Please try again later.", {
-        duration: 4000,
-        style: {
-          background: "#ef4444",
-          color: "#fff",
-          padding: "16px",
-          borderRadius: "8px",
-        },
-        iconTheme: {
-          primary: "#fff",
-          secondary: "#ef4444",
-        },
+      setSubmitStatus({
+        type: "error",
+        message: "An error occurred. Please try again later.",
       });
     } finally {
       setIsSubmitting(false);
@@ -114,29 +85,29 @@ const GetInTouch = () => {
 
   return (
     <section className="bg-[#051C36] py-16 px-4 md:px-8 lg:px-16">
-      <div className="max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-16">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-18 items-stretch min-h-[600px]">
           {/* Left Side - Image */}
           <div className="flex items-center justify-center">
-            <div className="relative w-full max-w-xl">
-              <div className="rounded-2xl p-2 shadow-2xl">
+            <div className="relative w-full max-w-xl h-full flex items-center">
+              <div className="rounded-2xl p-2 shadow-2xl w-full">
                 <Image
                   src="/get.png"
                   alt="Professional team working together"
                   width={500}
                   height={400}
-                  className="w-full h-auto rounded-2xl object-cover"
+                  className="w-full h-[600px] rounded-2xl object-cover"
                 />
               </div>
             </div>
           </div>
 
           {/* Right Side - Contact Form */}
-          <div className="flex items-center justify-center">
-            <div className="w-full max-w-xl">
-              <div className="bg-neutral-50/10 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-slate-600/30">
+          <div className="flex items-stretch justify-center">
+            <div className="w-full max-w-xl flex">
+              <div className="bg-[#0a2540] backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-slate-600/30 flex-1 flex flex-col w-full">
                 <h2 className="text-white text-3xl lg:text-4xl font-bold mb-3">
-                  Input Your Details
+                  Get In Touch
                 </h2>
 
                 {/* Status Messages */}
@@ -164,97 +135,149 @@ const GetInTouch = () => {
                   )}
                 </AnimatePresence>
 
-                <form onSubmit={handleSubmit}>
-                  {/* Full Name */}
-                  <div>
-                    <input
-                      type="text"
-                      name="fullName"
-                      placeholder="Enter your full name"
-                      value={formData.fullName}
-                      onChange={handleInputChange}
-                      disabled={isSubmitting}
-                      className="w-full bg-transparent border-b-2 border-slate-500 text-white placeholder-slate-300 py-4 px-0 text-lg focus:border-sky-400 focus:outline-none transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
-                      required
-                    />
-                  </div>
+                <form onSubmit={handleSubmit} className="flex-1 flex flex-col">
+                  <div className="flex-1 space-y-6">
+                    {/* Name Input - Floating Label */}
+                    <div className="relative">
+                      <input
+                        type="text"
+                        name="fullName"
+                        value={formData.fullName}
+                        onChange={handleInputChange}
+                        onFocus={() => setFocusedField("fullName")}
+                        onBlur={() => setFocusedField(null)}
+                        placeholder=" "
+                        required
+                        disabled={isSubmitting}
+                        className="w-full px-4 py-3 bg-transparent rounded-lg border border-slate-500 text-white text-base font-normal  focus:outline-none focus:border-sky-500 transition-all peer placeholder-transparent disabled:opacity-50 disabled:cursor-not-allowed"
+                      />
+                      <label
+                        className={`absolute left-3 top-0 bg-[#0a2540] px-2 transition-all duration-200 pointer-events-none  ${
+                          formData.fullName || focusedField === "fullName"
+                            ? "-translate-y-1/2 text-xs text-sky-400"
+                            : "translate-y-3 text-base text-slate-300"
+                        }`}
+                      >
+                        Name
+                      </label>
+                    </div>
 
-                  {/* Phone Number */}
-                  <div>
-                    <input
-                      type="tel"
-                      name="phone"
-                      placeholder="Phone number"
-                      value={formData.phone}
-                      onChange={handleInputChange}
-                      disabled={isSubmitting}
-                      className="w-full bg-transparent border-b-2 border-slate-500 text-white placeholder-slate-300 py-4 px-0 text-lg focus:border-sky-400 focus:outline-none transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
-                      required
-                    />
-                  </div>
+                    {/* Phone Input - Floating Label */}
+                    <div className="relative">
+                      <input
+                        type="tel"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleInputChange}
+                        onFocus={() => setFocusedField("phone")}
+                        onBlur={() => setFocusedField(null)}
+                        placeholder=" "
+                        required
+                        disabled={isSubmitting}
+                        className="w-full px-4 py-3 bg-transparent rounded-lg border border-slate-500 text-white text-base font-normal  focus:outline-none focus:border-sky-500 transition-all peer placeholder-transparent disabled:opacity-50 disabled:cursor-not-allowed"
+                      />
+                      <label
+                        className={`absolute left-3 top-0 bg-[#0a2540] px-2 transition-all duration-200 pointer-events-none  ${
+                          formData.phone || focusedField === "phone"
+                            ? "-translate-y-1/2 text-xs text-sky-400"
+                            : "translate-y-3 text-base text-slate-300"
+                        }`}
+                      >
+                        Phone
+                      </label>
+                    </div>
 
-                  {/* Email */}
-                  <div>
-                    <input
-                      type="email"
-                      name="email"
-                      placeholder="Your email"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      disabled={isSubmitting}
-                      className="w-full bg-transparent border-b-2 border-slate-500 text-white placeholder-slate-300 py-4 px-0 text-lg focus:border-sky-400 focus:outline-none transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
-                      required
-                    />
-                  </div>
+                    {/* Email Input - Floating Label */}
+                    <div className="relative">
+                      <input
+                        type="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleInputChange}
+                        onFocus={() => setFocusedField("email")}
+                        onBlur={() => setFocusedField(null)}
+                        placeholder=" "
+                        required
+                        disabled={isSubmitting}
+                        className="w-full px-4 py-3 bg-transparent rounded-lg border border-slate-500 text-white text-base font-normal  focus:outline-none focus:border-sky-500 transition-all peer placeholder-transparent disabled:opacity-50 disabled:cursor-not-allowed"
+                      />
+                      <label
+                        className={`absolute left-3 top-0 bg-[#0a2540] px-2 transition-all duration-200 pointer-events-none  ${
+                          formData.email || focusedField === "email"
+                            ? "-translate-y-1/2 text-xs text-sky-400"
+                            : "translate-y-3 text-base text-slate-300"
+                        }`}
+                      >
+                        Email
+                      </label>
+                    </div>
 
-                  {/* Service Description */}
-                  <div>
-                    <input
-                      type="text"
-                      name="description"
-                      placeholder="Service Description"
-                      value={formData.description}
-                      onChange={handleInputChange}
-                      disabled={isSubmitting}
-                      className="w-full bg-transparent border-b-2 border-slate-500 text-white placeholder-slate-300 py-4 px-0 text-lg focus:border-sky-400 focus:outline-none transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
-                    />
-                  </div>
+                    {/* Description Input - Floating Label */}
+                    <div className="relative">
+                      <input
+                        type="text"
+                        name="description"
+                        value={formData.description}
+                        onChange={handleInputChange}
+                        onFocus={() => setFocusedField("description")}
+                        onBlur={() => setFocusedField(null)}
+                        placeholder=" "
+                        disabled={isSubmitting}
+                        className="w-full px-4 py-3 bg-transparent rounded-lg border border-slate-500 text-white text-base font-normal  focus:outline-none focus:border-sky-500 transition-all peer placeholder-transparent disabled:opacity-50 disabled:cursor-not-allowed"
+                      />
+                      <label
+                        className={`absolute left-3 top-0 bg-[#0a2540] px-2 transition-all duration-200 pointer-events-none  ${
+                          formData.description || focusedField === "description"
+                            ? "-translate-y-1/2 text-xs text-sky-400"
+                            : "translate-y-3 text-base text-slate-300"
+                        }`}
+                      >
+                        Description
+                      </label>
+                    </div>
 
-                  {/* Message */}
-                  <div>
-                    <textarea
-                      name="message"
-                      placeholder="Message"
-                      rows={2}
-                      value={formData.message}
-                      onChange={handleInputChange}
-                      disabled={isSubmitting}
-                      className="w-full bg-transparent border-b-2 border-slate-500 text-white placeholder-slate-300 py-4 px-0 text-lg focus:border-sky-400 focus:outline-none transition-colors duration-300 resize-none disabled:opacity-50 disabled:cursor-not-allowed"
-                      required
-                    />
+                    {/* Message Textarea - Floating Label */}
+                    <div className="relative flex-1">
+                      <textarea
+                        name="message"
+                        value={formData.message}
+                        onChange={handleInputChange}
+                        onFocus={() => setFocusedField("message")}
+                        onBlur={() => setFocusedField(null)}
+                        placeholder=" "
+                        required
+                        disabled={isSubmitting}
+                        className="w-full h-full min-h-[120px] px-4 py-3 bg-transparent rounded-lg border border-slate-500 text-white text-base font-normal  focus:outline-none transition-all resize-none peer placeholder-transparent disabled:opacity-50 disabled:cursor-not-allowed focus:border-sky-500"
+                      />
+                      <label
+                        className={`absolute left-3 top-0 bg-[#0a2540] px-2 transition-all duration-200 pointer-events-none  ${
+                          formData.message || focusedField === "message"
+                            ? "-translate-y-1/2 text-xs text-sky-400"
+                            : "translate-y-3 text-base text-slate-300"
+                        }`}
+                      >
+                        Message
+                      </label>
+                    </div>
                   </div>
 
                   {/* Submit Button */}
-                  <div className="pt-6">
+                  <div className="mt-6">
                     <motion.button
                       type="submit"
                       disabled={isSubmitting}
-                      className={`bg-sky-500 hover:bg-sky-600 text-white font-bold py-3 px-10 rounded-full transition-all duration-300 uppercase tracking-wider text-lg shadow hover:shadow-xl transform hover:scale-105 flex items-center justify-center gap-2 ${
-                        isSubmitting
-                          ? "opacity-50 cursor-not-allowed"
-                          : "cursor-pointer"
-                      }`}
-                      whileHover={{ scale: isSubmitting ? 1 : 1.05 }}
-                      whileTap={{ scale: isSubmitting ? 1 : 0.95 }}
+                      whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
+                      whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
+                      className="w-full px-8 py-3 bg-sky-500 hover:bg-sky-600 disabled:bg-sky-300 rounded-full text-white text-xl font-bold  uppercase tracking-wide transition-colors flex items-center justify-center gap-2 disabled:cursor-not-allowed shadow-lg cursor-pointer"
                     >
                       {isSubmitting ? (
                         <>
                           <span className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                          Sending...
+                          SENDING...
                         </>
                       ) : (
                         <>
-                          Submit
+                          SUBMIT
                           <Send className="w-5 h-5" />
                         </>
                       )}

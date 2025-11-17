@@ -15,7 +15,7 @@ const Header = () => {
           className="w-full h-full"
         >
           <Image
-            src="/blogs/Blog.png"
+            src="/blogs/blog-1.png"
             alt="About Us Background"
             fill
             className="object-cover"
@@ -68,7 +68,7 @@ const Header = () => {
                 delay: 0.6,
                 ease: [0.25, 0.1, 0.25, 1],
               }}
-              className="text-3xl sm:text-4xl md:text-[48px] font-bold font-[Anek_Malayalam] text-white text-center tracking-[-0.4px]"
+              className="text-3xl sm:text-4xl md:text-[48px] font-bold  text-white text-center tracking-[-0.4px]"
             >
               Blog
             </motion.h1>
